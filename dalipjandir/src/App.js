@@ -1,6 +1,9 @@
 import React from 'react';
+
 import './App.css';
 
+import sword from './resources/images/Sword.png'
+import wand from './resources/images/Wand.png'
 
 // function App() {
 //   return (
@@ -20,12 +23,8 @@ import './App.css';
 
 function Main() {
     function topTransition(){
-        document.querySelector(".top-layer").classList.toggle("active");
-        document.querySelector(".top-layer--2").classList.toggle("active");
-        document.querySelector(".top-layer--3").classList.toggle("active");
-        document.querySelector(".top-layer--4").classList.toggle("active");
-        document.querySelector(".top-layer--5").classList.toggle("active");
         document.querySelector("#takeThis").classList.toggle("active");
+        document.querySelector("#takeCont").classList.toggle("active");
     }
 
     return (
@@ -39,21 +38,27 @@ function Main() {
             </div>
             <button id="startButton" onClick={topTransition}>Start</button>
 
-            <div className="top-layer"/>
-            <div className="top-layer--2"/>
-            <div className="top-layer--3"/>
-            <div className="top-layer--4"/>
-            <div className="top-layer--5"/>
-
             <div id="takeThis">
-                <p id="dangerous" className="text-center">IT'S DANGEROUS TO GO ALONE. TAKE THIS!</p>
-                <div className="container">
-                    <div id="wRow" className="row">
+                <div id="takeCont" className="container-fluid">
+                    <div className="row">
+                        <div className="col">
+                            <p id="dangerous" className="text-center">IT'S DANGEROUS TO GO ALONE. TAKE THIS!</p>
+                        </div>
+                    </div>
+                    <div id="wRow" className="row text-center">
                         <div className="col-12 col-md-6 weapons">
-                            <p>EASY MODE</p>
+                            <a href="https://google.ca">
+                                <p className="mode">EASY MODE</p>
+                                <img src={wand} alt="wand"/>
+                                <p className="weaponDesc">ONE SWISH AND THE WORK IS DONE</p>
+                            </a>
                         </div>
                         <div className="col-12 col-md-6 weapons">
-                            <p>HARD MODE</p>
+                            <a href="https://google.ca">
+                                <p className="mode">HARD MODE</p>
+                                <img src={sword} alt="sword"/>
+                                <p className="weaponDesc">I WANT TO SLASH SOME THINGS</p>
+                            </a>
                         </div>
                     </div>
                 </div>
