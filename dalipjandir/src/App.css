@@ -1,9 +1,9 @@
-#Birds{
+#Birds {
     top: 0;
     position: absolute;
 }
 
-#Name{
+#Name {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 35pt;
@@ -100,10 +100,11 @@
     margin-top: 10px;
     margin-bottom: 0;
     font-size: 50pt;
+    cursor: url(resources/images/Sword.png), auto;
 }
 
 .weapons:hover{
-    animation: flow 8s ease-in-out infinite;
+    animation: flow 4s ease-in-out infinite;
     background: linear-gradient(-60deg, #03a9f4, #00bcd4, #e73c7e, #ee7752);
     background-size: 300%;
     -webkit-background-clip: text;

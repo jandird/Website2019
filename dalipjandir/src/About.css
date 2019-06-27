@@ -1,0 +1,94 @@
+#about{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    background-color: #171f29;
+    color: #57bfc7;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1{
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 45pt;
+}
+
+#underline {
+    background: linear-gradient(-60deg, #57bfc7, #00bcd4, #e73c7e, #ee7752);
+    background-size: 150%;
+    animation: flow 6s ease-in-out infinite;
+    margin: 0 auto 15px;
+    width: 260px;
+    height: 10px;
+}
+
+#smallUnderline {
+    background: linear-gradient(-60deg, #ee7752, #e73c7e, #00bcd4, #57bfc7);
+    background-size: 160%;
+    animation: flow 8s ease-in-out infinite;
+    margin: 0 auto;
+    width: 160px;
+    height: 10px;
+}
+
+@keyframes flow {
+
+    0% {background-position: 0 50%;}
+
+    50% {background-position: 100% 50%;}
+
+    100% {background-position: 0 50%;}
+
+}
+
+#meImg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+    display: block;
+    margin: 10px auto 10px auto;
+}
+
+#race {
+    background: linear-gradient(-60deg, #7fafcf, #74e4bb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 20pt;
+}
+
+.skillRow {
+    font-size: 15pt;
+    font-weight: 600;
+}
+
+.skillImg {
+    width: 100px;
+    height: 100px;
+    filter: brightness(0) invert(1);
+    transition: 0.5s ease;
+
+    display: block;
+    margin: 10px auto 10px auto;
+}
+.skillImg:hover {
+    filter: brightness(1);
+}
+
+.skill-col-1 {
+    color: #00e5ff
+}
+
+.skill-col-2 {
+    color: #69f0ae;
+}
+
+.skill-col-3 {
+    color: #ff6f00;
+}
+
+.skill-col-4 {
+    color: #e73c7e;
+}
