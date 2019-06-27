@@ -21,22 +21,6 @@ import spring from './resources/images/skills/spring.png'
 import bootstrap from './resources/images/skills/bootstrap.png'
 import photoshop from './resources/images/skills/photoshop.png'
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
 function Main() {
     function topTransition(){
         document.querySelector("#takeThis").classList.toggle("active");
@@ -118,10 +102,12 @@ function About(){
                     <img src={me} alt="me" id="meImg"/>
                     <p id="race" className="text-center">Dalip Jandir - Level 22 Human</p>
 
-                    <div>
-                        <p>Dalip is a 4th Year Software Engineering Student Graduating April 2020</p>
+                    <div id="dalip-info">
+                        <p>Dalip is a 4th year Software Engineering student with a passion for technology and developing
+                            applications - Graduating April 2020
+                        </p>
                         <p>Class: Full-Stack Developer</p>
-                        <p>Quest: Receive a Full-Stack Developer New Grad Offer </p>
+                        <p>Quest: Receive a New Grad Full-Stack Developer Offer </p>
                     </div>
                 </div>
 

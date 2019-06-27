@@ -56,7 +56,13 @@ h1{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
-    font-size: 20pt;
+    font-size: 25pt;
+}
+
+#dalip-info {
+    margin-left: 30px;
+    font-size: 15pt;
+    font-weight: 600;
 }
 
 .skillRow {
