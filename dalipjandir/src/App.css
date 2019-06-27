@@ -81,7 +81,7 @@
     color: WHITE;
 }
 #takeCont.active {
-    animation: fadeIn 8s;
+    animation: fadeIn 6s;
     animation-delay: 0.2s;
 }
 
@@ -115,8 +115,17 @@
     color: WHITE;
 }
 
+.weaponButton {
+    background:inherit;
+    border:none;
+}
+
 .weaponDesc{
     margin-top: 10px;
     font-size: 30pt;
     color: WHITE;
+}
+
+#aboutComp{
+    top: -300%;
 }

@@ -27,6 +27,10 @@ function Main() {
         document.querySelector("#takeCont").classList.toggle("active");
     }
 
+    function wandClicked(){
+
+    }
+
     return (
         <div id="Main">
             <div id="Birds">
@@ -47,21 +51,24 @@ function Main() {
                     </div>
                     <div id="wRow" className="row text-center">
                         <div className="col-12 col-md-6 weapons">
-                            <a href="https://google.ca">
+                            <button className="weaponButton">
                                 <p className="mode">EASY MODE</p>
                                 <img src={wand} alt="wand"/>
                                 <p className="weaponDesc">ONE SWISH AND THE WORK IS DONE</p>
-                            </a>
+                            </button>
                         </div>
                         <div className="col-12 col-md-6 weapons">
-                            <a href="https://google.ca">
+                            <button className="weaponButton">
                                 <p className="mode">HARD MODE</p>
                                 <img src={sword} alt="sword"/>
                                 <p className="weaponDesc">I WANT TO SLASH SOME THINGS</p>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div id="aboutComp">
+                <About/>
             </div>
         </div>
     );
@@ -177,4 +184,4 @@ function About(){
     );
 }
 
-export default About;
+export default Main;
