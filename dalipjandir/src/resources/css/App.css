@@ -70,7 +70,7 @@
     bottom: auto;
     right: auto;
     transition: 1s cubic-bezier(0.6, 0.05, 0.4, 1);
-    background: #262933;
+    background: #171f29;
 }
 #takeThis.active{
     top: 0;
@@ -100,7 +100,7 @@
     margin-top: 10px;
     margin-bottom: 0;
     font-size: 50pt;
-    cursor: url(resources/images/Sword.png), auto;
+    cursor: url(../images/Sword.png), auto;
 }
 
 .weapons:hover{
@@ -127,5 +127,5 @@
 }
 
 #aboutComp{
-    top: -300%;
+    margin-top: 100%;
 }

@@ -83,6 +83,13 @@ h1{
     filter: brightness(1);
 }
 
+#photoshop {
+    background: transparent;
+}
+#photoshop:hover{
+    background: white;
+}
+
 .skill-col-1 {
     color: #00e5ff
 }
