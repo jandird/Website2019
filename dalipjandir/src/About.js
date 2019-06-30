@@ -4,6 +4,14 @@ import './resources/css/About.css';
 
 import me from "./resources/images/me.png";
 
+import book from "./resources/images/bio.png"
+import fullstack from "./resources/images/full-stack.png"
+import quest from "./resources/images/quest.png"
+
+import rapidlearning from "./resources/images/rapid-learning.png"
+import artsci from "./resources/images/art-sci.png"
+import adaptability from "./resources/images/adaptability.png"
+
 import java from "./resources/images/skills/java.png";
 import kotlin from "./resources/images/skills/kotlin.png";
 import python from "./resources/images/skills/python.png";
@@ -22,25 +30,57 @@ function About(){
     return(
         <div id="about" className="container-fluid">
 
-            <h1 className="text-center">About Dalip</h1>
+            <h1 className="text-center">Character Info</h1>
             <div id="underline"/>
             <div id="smallUnderline"/>
 
             <div className="row">
-                <div className="col-md-6">
-                    <img src={me} alt="me" id="meImg"/>
-                    <p id="race" className="text-center">Dalip Jandir - Level 22 Human</p>
-
-                    <div id="dalip-info">
-                        <p>Dalip is a 4th year Software Engineering student with a passion for technology and developing
-                            applications - Graduating April 2020
+                <div className="col-md-7">
+                    <div className="row">
+                        <img src={me} alt="me" id="meImg"/>
+                        <h2 id="race" className="text-center">Dalip Jandir - Level 22 Human</h2>
+                    </div>
+                    <div id="dalip-info" className="row">
+                        <p>
+                            <img src={book} alt="bio" className="bio-icons"/>
+                            BIOGRAPHY: Dalip is a 4th year Software Engineering student at McMaster University with a
+                            passion for technology and developing applications - Graduating April 2020
                         </p>
-                        <p>Class: Full-Stack Developer</p>
-                        <p>Quest: Receive a New Grad Full-Stack Developer Offer </p>
+                        <p>
+                            <img src={fullstack} alt="fullstack" className="bio-icons"/>
+                            CLASS: Full-Stack App Developer
+                        </p>
+                        <p>
+                            <img src={quest} alt="quest" className="bio-icons"/>
+                            QUEST: Receive a New Grad Full-Stack App Developer Offer
+                        </p>
+                    </div>
+                    <div className="row">
+                        <h2 className="text-center">Character Traits</h2>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4">
+                            <img src={rapidlearning} alt="rapidlearning" className="trait-img"/>
+                            <p className="text-center trait-head">Rapid Learning</p>
+                            <p className="text-center trait-text">The ability to quickly pick up and learn new technologies/skills</p>
+                        </div>
+                        <div className="col-md-4">
+                            <img src={artsci} alt="artsci" className="trait-img"/>
+                            <p className="text-center trait-head">Artistic Scientist</p>
+                            <p className="text-center trait-text">The ability to tackle problems and tasks both creatively and logically</p>
+                        </div>
+                        <div className="col-md-4">
+                            <img src={adaptability} alt="adaptability" className="trait-img"/>
+                            <p className="text-center trait-head">Adaptability</p>
+                            <p className="text-center trait-text">The ability to adapt to any and all environments</p>
+                        </div>
                     </div>
                 </div>
 
-                <div className="col-md-6">
+                <div className="col-md-5">
+                    <div className="row">
+                        <h2 className="text-center">Abilities / Skills</h2>
+                    </div>
                     <div className="row skillRow skill-col-1 text-center">
                         <div className="col-sm-4">
                             <img src={java} alt="java" className="skillImg"/>

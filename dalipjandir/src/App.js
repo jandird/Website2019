@@ -1,6 +1,7 @@
 import React from 'react';
 
 import About from './About.js'
+import QuestJournal from './QuestJournal.js'
 
 import './resources/css/App.css';
 
@@ -79,6 +80,12 @@ class Birds extends React.Component {
     render() {
         return <div id="background"/>
     }
+}
+
+function Test(){
+    return(
+        <QuestJournal/>
+    );
 }
 
 export default Main;
