@@ -57,6 +57,9 @@ function Main() {
             <div id="aboutComp">
                 <About/>
             </div>
+            <div>
+                <QuestJournal/>
+            </div>
         </div>
     );
 }
@@ -80,12 +83,6 @@ class Birds extends React.Component {
     render() {
         return <div id="background"/>
     }
-}
-
-function Test(){
-    return(
-        <QuestJournal/>
-    );
 }
 
 export default Main;
