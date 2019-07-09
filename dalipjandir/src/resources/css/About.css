@@ -12,6 +12,12 @@ h1 {
     margin-top: 40px;
     font-weight: 600;
     font-size: 45pt;
+
+    animation: flow 4s ease-in-out infinite;
+    background: linear-gradient(-60deg, #03a9f4, #00bcd4, #e73c7e, #ee7752);
+    background-size: 120%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {

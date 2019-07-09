@@ -14,10 +14,6 @@ function Main() {
         document.querySelector("#takeCont").classList.toggle("active");
     }
 
-    function wandClicked(){
-
-    }
-
     return (
         <div id="Main">
             <div id="Birds">
