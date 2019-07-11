@@ -1,5 +1,7 @@
 import React from 'react';
 
+import QuestCard from './QuestCard.js'
+
 import './resources/css/QuestJournal.css';
 
 import degree from './resources/images/degree.png'
@@ -16,33 +18,14 @@ function QuestJournal() {
 
             <div className="row">
                 <div className="col-lg-4">
-                    <QuestCard cardClass="card quest-pink" title='TRAINING QUESTS' questImg={degree} imgClass="quest-type-white"/>
+                    <QuestCard cardClass="quest-pink" title='TRAINING QUESTS' questImg={degree} imgClass="quest-type-white"/>
                 </div>
                 <div className="col-lg-4">
-                    <QuestCard cardClass="card quest-orange" title="MAIN QUESTS" questImg={tie} imgClass="quest-type-black"/>
+                    <QuestCard cardClass="quest-orange" title="MAIN QUESTS" questImg={tie} imgClass="quest-type-black"/>
                 </div>
                 <div className="col-lg-4">
-                    <QuestCard cardClass="card quest-pink" title="SIDE QUESTS" questImg={pencilRuler} imgClass="quest-type-white"/>
+                    <QuestCard cardClass="quest-pink" title="SIDE QUESTS" questImg={pencilRuler} imgClass="quest-type-white"/>
                 </div>
-            </div>
-        </div>
-    );
-}
-
-function QuestCard (props) {
-
-    function trainingTransition() {
-        let cards = document.querySelectorAll(".card");
-        for (let i = 0; i < cards.length; ++i) {
-            cards[i].toggle("hide")
-        }
-    }
-
-    return (
-        <div className="wrapper">
-            <div className={props.cardClass} onClick={trainingTransition}>
-                <p className="quest-title">{props.title}</p>
-                <img src={props.questImg} alt="questImg" className={props.imgClass}/>
             </div>
         </div>
     );

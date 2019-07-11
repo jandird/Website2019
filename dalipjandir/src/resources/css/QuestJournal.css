@@ -83,9 +83,9 @@ h2 {
     z-index: 400;
 }
 
-.card.hide {
+.card-hide {
     transform: rotateX(90deg) scale(0.7);
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
 
 @keyframes entry {
@@ -94,7 +94,7 @@ h2 {
         opacity: 0.1;
     }
     100% {
-        top: 0%;
+        top: 0;
     }
 }
 
@@ -109,11 +109,13 @@ h2 {
 .quest-orange {
     color: BLACK;
     background: linear-gradient(30deg, #ffab91, #57bfc7);
+    height: 100%;
 }
 
 .quest-pink {
     color: WHITE;
     background: linear-gradient(30deg, #00bcd4, #e73c7e);
+    height: 100%;
 }
 
 .quest-type-white {
