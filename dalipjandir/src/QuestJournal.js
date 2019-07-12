@@ -6,6 +6,8 @@ import degree from './resources/images/degree.png'
 import tie from './resources/images/tie.png'
 import pencilRuler from './resources/images/pencil-ruler.png'
 
+import mcp from './resources/images/mcp.png'
+
 function QuestJournal() {
 
     return (
@@ -16,12 +18,19 @@ function QuestJournal() {
 
             <div className="row">
                 <div className="col-lg-4">
-                    <QuestCard cardClass="card quest-card card-pink"
-                               title='TRAINING QUESTS'
-                               questImg={degree}
-                               imgClass="quest-type-white"
+                    <QuestCard
+                        cardClass="card quest-card card-pink"
+                        title='TRAINING QUESTS'
+                        questImg={degree}
+                        imgClass="quest-type-white"
                     />
-                    <ProjectCard/>
+                    <ProjectCard
+                        wrapper="training-wrapper"
+                        cardClass="card training-card card-pink"
+                        title="MCMASTER COMPETITIVE PROGRAMMING"
+                        projectImg={mcp}
+                        imgClass="quest-type-white"
+                    />
                 </div>
                 <div className="col-lg-4">
                     <QuestCard
@@ -30,7 +39,13 @@ function QuestJournal() {
                         questImg={tie}
                         imgClass="quest-type-black"
                     />
-                    <ProjectCard/>
+                    <ProjectCard
+                        wrapper="training-wrapper"
+                        cardClass="card training-card card-orange"
+                        title="MCMASTER UNIVERSITY"
+                        projectImg={tie}
+                        imgClass="quest-type-black"
+                    />
                 </div>
                 <div className="col-lg-4">
                     <QuestCard
@@ -39,7 +54,13 @@ function QuestJournal() {
                         questImg={pencilRuler}
                         imgClass="quest-type-white"
                     />
-                    <ProjectCard/>
+                    <ProjectCard
+                        wrapper="training-wrapper"
+                        cardClass="card training-card card-pink"
+                        title="FLAG IDENTIFICATION APPLICATION"
+                        projectImg={tie}
+                        imgClass="quest-type-black"
+                    />
                 </div>
             </div>
         </div>
@@ -83,10 +104,10 @@ function QuestCard (props) {
 function ProjectCard (props) {
 
     return (
-        <div className="training-wrapper">
-            <div className="card training-card card-pink">
-                <p className="card-title">MCMASTER UNIVERSITY</p>
-                <img src={tie} alt="mcmaster"/>
+        <div className={props.wrapper}>
+            <div className={props.cardClass}>
+                <p className="project-title">{props.title}</p>
+                <img src={props.projectImg} alt="mcmaster" className={props.imgClass}/>
             </div>
         </div>
     );
