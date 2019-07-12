@@ -59,46 +59,57 @@ h2 {
     height: 10px;
 }
 
-.wrapper {
-    margin: auto;
-    width: 400px;
-    height: 650px;
-    perspective: 900px;
-}
-
 .card {
     top: 0;
     width: 100%;
     height: 100%;
     transition: .5s all ease;
-    transform: rotateX(50deg) scale(0.7);
     box-shadow: 0 20px 50px BLACK;
-    animation: entry 1s linear 1;
+    animation: entry 2s;
 }
 
-.card:hover {
+.quest-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 650px;
+    perspective: 900px;
+    z-index: 1;
+}
+.quest-wrapper.hide {
+    z-index: 0;
+}
+
+.quest-card {
+    transform: rotateX(50deg) scale(0.7);
+    visibility: visible;
+    opacity: 1;
+}
+.quest-card.hide {
+    transform: rotateX(90deg) scale(0.7);
+    opacity: 0;
+}
+.quest-card:hover {
     cursor: pointer;
     transform: rotate(0deg) scale(1) translateY(10px);
     transition: .5s all ease;
     z-index: 400;
 }
 
-.card-hide {
-    transform: rotateX(90deg) scale(0.7);
-    /*visibility: hidden;*/
-}
-
 @keyframes entry {
     0% {
         top: -20%;
-        opacity: 0.1;
+        opacity: 0;
     }
     100% {
         top: 0;
     }
 }
 
-.quest-title {
+.card-title {
     font-size: 50pt;
     font-weight: 800;
     margin-top: 10px;
@@ -106,13 +117,13 @@ h2 {
     line-height: 60px;
 }
 
-.quest-orange {
+.card-orange {
     color: BLACK;
     background: linear-gradient(30deg, #ffab91, #57bfc7);
     height: 100%;
 }
 
-.quest-pink {
+.card-pink {
     color: WHITE;
     background: linear-gradient(30deg, #00bcd4, #e73c7e);
     height: 100%;
@@ -140,4 +151,36 @@ h2 {
     vertical-align: middle;
 
     filter: brightness(0);
+}
+
+.training-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 650px;
+    perspective: 900px;
+    z-index: -1;
+}
+.training-wrapper.show {
+    z-index: 1;
+}
+
+.training-card {
+    transform: rotateX(90deg) scale(0.7);
+    visibility: hidden;
+    opacity: 0;
+}
+.training-card.show {
+    transform: rotateX(50deg) scale(0.7);
+    visibility: visible;
+    opacity: 1;
+}
+.training-card:hover {
+    cursor: pointer;
+    transform: rotate(0deg) scale(1) translateY(10px);
+    transition: .5s all ease;
+    z-index: 400;
 }
