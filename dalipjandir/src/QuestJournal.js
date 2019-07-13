@@ -7,6 +7,8 @@ import tie from './resources/images/tie.png'
 import pencilRuler from './resources/images/pencil-ruler.png'
 
 import mcp from './resources/images/mcp.png'
+import mcmaster from './resources/images/mcmaster.png'
+import fia from './resources/images/fia.png'
 
 function QuestJournal() {
 
@@ -43,7 +45,7 @@ function QuestJournal() {
                         wrapper="training-wrapper"
                         cardClass="card training-card card-orange"
                         title="MCMASTER UNIVERSITY"
-                        projectImg={tie}
+                        projectImg={mcmaster}
                         imgClass="quest-type-black"
                     />
                 </div>
@@ -58,8 +60,8 @@ function QuestJournal() {
                         wrapper="training-wrapper"
                         cardClass="card training-card card-pink"
                         title="FLAG IDENTIFICATION APPLICATION"
-                        projectImg={tie}
-                        imgClass="quest-type-black"
+                        projectImg={fia}
+                        imgClass="quest-type-white"
                     />
                 </div>
             </div>
@@ -69,7 +71,7 @@ function QuestJournal() {
 
 function QuestCard (props) {
 
-    function trainingTransition() {
+    function toggleQuest() {
         let questCards = document.querySelectorAll(".quest-card");
         for (let i = 0; i < questCards.length; ++i) {
             questCards[i].classList.toggle("hide")
@@ -80,6 +82,10 @@ function QuestCard (props) {
             questWrapper[i].classList.toggle("hide")
         }
 
+        setTimeout(trainingTransition, 500)
+    }
+
+    function trainingTransition() {
         let trainingCards = document.querySelectorAll(".training-card");
         for (let i = 0; i < trainingCards.length; ++i) {
             trainingCards[i].classList.toggle("show")
@@ -93,7 +99,7 @@ function QuestCard (props) {
 
     return (
         <div className="quest-wrapper">
-            <div className={props.cardClass} onClick={trainingTransition}>
+            <div className={props.cardClass} onClick={toggleQuest}>
                 <p className="card-title">{props.title}</p>
                 <img src={props.questImg} alt="questImg" className={props.imgClass}/>
             </div>

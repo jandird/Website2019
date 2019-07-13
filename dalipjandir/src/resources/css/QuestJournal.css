@@ -65,7 +65,6 @@ h2 {
     height: 100%;
     transition: .5s all ease;
     box-shadow: 0 20px 50px BLACK;
-    animation: entry 2s;
 }
 
 .quest-wrapper {
@@ -85,7 +84,7 @@ h2 {
 
 .quest-card {
     transform: rotateX(50deg) scale(0.7);
-    visibility: visible;
+    transition: .5s all ease-in-out;
     opacity: 1;
 }
 .quest-card.hide {
@@ -94,7 +93,7 @@ h2 {
 }
 .quest-card:hover {
     cursor: pointer;
-    transform: rotate(0deg) scale(1) translateY(10px);
+    transform: rotate(0deg) scale(1);
     transition: .5s all ease;
     z-index: 400;
 }
@@ -119,7 +118,7 @@ h2 {
 
 .card-orange {
     color: BLACK;
-    background: linear-gradient(30deg, #ffab91, #57bfc7);
+    background: linear-gradient(30deg, #ffab91, #64ffda);
     height: 100%;
 }
 
@@ -162,7 +161,6 @@ h2 {
 }
 
 .training-wrapper {
-    position: absolute;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -188,7 +186,6 @@ h2 {
 }
 .training-card:hover {
     cursor: pointer;
-    transform: rotate(0deg) scale(1) translateY(10px);
-    transition: .5s all ease;
+    transform: rotate(0deg) scale(1);
     z-index: 400;
 }
