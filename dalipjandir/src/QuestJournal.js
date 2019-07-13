@@ -18,34 +18,20 @@ function QuestJournal() {
             <div id="underline"/>
             <div id="smallUnderline"/>
 
-            <div className="row">
-                <div className="col-lg-4">
+            <div className="row quest-row">
+                <div className="col-lg-4 col-md-6">
                     <QuestCard
                         cardClass="card quest-card card-pink"
                         title='TRAINING QUESTS'
                         questImg={degree}
                         imgClass="quest-type-white"
                     />
-                    <ProjectCard
-                        wrapper="training-wrapper"
-                        cardClass="card training-card card-pink"
-                        title="MCMASTER COMPETITIVE PROGRAMMING"
-                        projectImg={mcp}
-                        imgClass="quest-type-white"
-                    />
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-4 col-md-6">
                     <QuestCard
                         cardClass="card quest-card card-orange"
                         title="MAIN QUESTS"
                         questImg={tie}
-                        imgClass="quest-type-black"
-                    />
-                    <ProjectCard
-                        wrapper="training-wrapper"
-                        cardClass="card training-card card-orange"
-                        title="MCMASTER UNIVERSITY"
-                        projectImg={mcmaster}
                         imgClass="quest-type-black"
                     />
                 </div>
@@ -56,11 +42,64 @@ function QuestJournal() {
                         questImg={pencilRuler}
                         imgClass="quest-type-white"
                     />
+                </div>
+            </div>
+
+            <div className="row training-row">
+                <div className="col-lg-4">
                     <ProjectCard
-                        wrapper="training-wrapper"
+                        wrapper="wrapper training-wrapper"
+                        cardClass="card training-card card-pink"
+                        title="MCMASTER COMPETITIVE PROGRAMMING"
+                        projectImg={mcp}
+                        imgClass="quest-type-white"
+                    />
+                </div>
+                <div className="col-lg-4">
+                    <ProjectCard
+                        wrapper="wrapper training-wrapper"
+                        cardClass="card training-card card-orange"
+                        title="MCMASTER UNIVERSITY"
+                        projectImg={mcmaster}
+                        imgClass="quest-type-black"
+                    />
+                </div>
+                <div className="col-lg-4">
+                    <ProjectCard
+                        wrapper="wrapper training-wrapper"
                         cardClass="card training-card card-pink"
                         title="FLAG IDENTIFICATION APPLICATION"
                         projectImg={fia}
+                        imgClass="quest-type-white"
+                    />
+                </div>
+            </div>
+
+            <div className="row main-row">
+                <div className="col-lg-4">
+                    <ProjectCard
+                        wrapper="wrapper main-wrapper"
+                        cardClass="card main-card card-pink"
+                        title="ARCELORMITTAL DOFASCO"
+                        projectImg={mcp}
+                        imgClass="quest-type-white"
+                    />
+                </div>
+                <div className="col-lg-4">
+                    <ProjectCard
+                        wrapper="wrapper main-wrapper"
+                        cardClass="card main-card card-orange"
+                        title="DELOITTE DSPACE"
+                        projectImg={mcp}
+                        imgClass="quest-type-white"
+                    />
+                </div>
+                <div className="col-lg-4">
+                    <ProjectCard
+                        wrapper="wrapper main-wrapper"
+                        cardClass="card main-card card-pink"
+                        title="PREVIEW-ED"
+                        projectImg={mcp}
                         imgClass="quest-type-white"
                     />
                 </div>
@@ -82,7 +121,7 @@ function QuestCard (props) {
             questWrapper[i].classList.toggle("hide")
         }
 
-        setTimeout(trainingTransition, 500)
+        setTimeout(mainTransition, 500)
     }
 
     function trainingTransition() {
@@ -97,8 +136,22 @@ function QuestCard (props) {
         }
     }
 
+    function mainTransition() {
+        let mainCards = document.querySelectorAll(".main-card");
+        for (let i = 0; i < mainCards.length; ++i) {
+            mainCards[i].classList.toggle("show")
+        }
+
+        let mainWrapper = document.querySelectorAll(".main-wrapper");
+        for (let i = 0; i < mainWrapper.length; ++i) {
+            mainWrapper[i].classList.toggle("show")
+        }
+
+        document.querySelector(".main-row").classList.toggle("show")
+    }
+
     return (
-        <div className="quest-wrapper">
+        <div className="wrapper quest-wrapper">
             <div className={props.cardClass} onClick={toggleQuest}>
                 <p className="card-title">{props.title}</p>
                 <img src={props.questImg} alt="questImg" className={props.imgClass}/>

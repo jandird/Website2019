@@ -10,6 +10,11 @@
     font-weight: 600;
 }
 
+#rel {
+    display: flex;
+    position: relative;
+}
+
 h1 {
     margin-top: 40px;
     font-weight: 600;
@@ -59,6 +64,46 @@ h2 {
     height: 10px;
 }
 
+.quest-row {
+    display: flex;
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+
+    background: #171f29;
+}
+
+.training-row {
+    display: flex;
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.main-row {
+    display: flex;
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+.main-row.show {
+    z-index: 2;
+}
+
+.side-row {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
 .card {
     top: 0;
     width: 100%;
@@ -67,8 +112,7 @@ h2 {
     box-shadow: 0 20px 50px BLACK;
 }
 
-.quest-wrapper {
-    position: absolute;
+.wrapper {
     left: 0;
     right: 0;
     margin-left: auto;
@@ -76,6 +120,9 @@ h2 {
     width: 400px;
     height: 650px;
     perspective: 900px;
+}
+
+.quest-wrapper {
     z-index: 1;
 }
 .quest-wrapper.hide {
@@ -86,6 +133,7 @@ h2 {
     transform: rotateX(50deg) scale(0.7);
     transition: .5s all ease-in-out;
     opacity: 1;
+    z-index: 1;
 }
 .quest-card.hide {
     transform: rotateX(90deg) scale(0.7);
@@ -161,13 +209,6 @@ h2 {
 }
 
 .training-wrapper {
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
-    height: 650px;
-    perspective: 900px;
     z-index: -1;
 }
 .training-wrapper.show {
@@ -185,6 +226,29 @@ h2 {
     opacity: 1;
 }
 .training-card:hover {
+    cursor: pointer;
+    transform: rotate(0deg) scale(1);
+    z-index: 400;
+}
+
+.main-wrapper {
+    z-index: -1;
+}
+.main-wrapper.show {
+    z-index: 1;
+}
+
+.main-card {
+    transform: rotateX(90deg) scale(0.7);
+    visibility: hidden;
+    opacity: 0;
+}
+.main-card.show {
+    transform: rotateX(50deg) scale(0.7);
+    visibility: visible;
+    opacity: 1;
+}
+.main-card:hover {
     cursor: pointer;
     transform: rotate(0deg) scale(1);
     z-index: 400;
