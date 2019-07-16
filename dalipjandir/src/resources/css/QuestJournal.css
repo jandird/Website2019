@@ -36,6 +36,20 @@ h1 {
     100% {background-position: 0 50%;}
 }
 
+#back-button {
+    width: 75px;
+    height: 75px;
+    z-index: -1;
+    background: transparent;
+    border: none;
+    margin: 10px auto;
+}
+
+#back-img {
+    width: 75px;
+    height: 75px;
+}
+
 h2 {
     font-size: 25pt;
     font-weight: 600;
@@ -83,6 +97,9 @@ h2 {
     height: auto;
     z-index: -1;
 }
+.training-row.show {
+    z-index: 2;
+}
 
 .main-row {
     display: flex;
@@ -102,6 +119,9 @@ h2 {
     width: 100%;
     height: auto;
     z-index: -1;
+}
+.side-row.show {
+    z-index: 2;
 }
 
 .card {
@@ -249,6 +269,29 @@ h2 {
     opacity: 1;
 }
 .main-card:hover {
+    cursor: pointer;
+    transform: rotate(0deg) scale(1);
+    z-index: 400;
+}
+
+.side-wrapper {
+    z-index: -1;
+}
+.side-wrapper.show {
+    z-index: 1;
+}
+
+.side-card {
+    transform: rotateX(90deg) scale(0.7);
+    visibility: hidden;
+    opacity: 0;
+}
+.side-card.show {
+    transform: rotateX(50deg) scale(0.7);
+    visibility: visible;
+    opacity: 1;
+}
+.side-card:hover {
     cursor: pointer;
     transform: rotate(0deg) scale(1);
     z-index: 400;

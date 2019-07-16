@@ -30,9 +30,15 @@ function About(){
     return(
         <div id="about" className="container-fluid">
 
-            <h1 className="text-center">Character Info</h1>
-            <div id="underline"/>
-            <div id="smallUnderline"/>
+            <div className="row">
+                <h1 className="text-center">Character Info</h1>
+            </div>
+            <div className="row">
+                <div id="underline"/>
+            </div>
+            <div className="row">
+                <div id="smallUnderline"/>
+            </div>
 
             <div className="row">
                 <div className="col-md-7">
