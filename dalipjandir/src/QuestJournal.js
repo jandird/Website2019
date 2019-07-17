@@ -64,7 +64,7 @@ class QuestJournal extends React.Component{
                             imgClass="quest-type-black"
                         />
                     </div>
-                    <div className="col-lg-4 col-md-6">
+                    <div className="col-lg-4 col-md-12">
                         <QuestCard
                             cardClass="card quest-card card-pink"
                             cardTransition={() => this.toggleQuest("side")}
@@ -170,57 +170,24 @@ class QuestJournal extends React.Component{
             questWrapper[i].classList.toggle("hide")
         }
 
-        if (type === "training"){
-            setTimeout(this.trainingTransition, 500)
-        }
-        else if (type === "main"){
-            setTimeout(this.mainTransition, 500)
-        }
-        else {
-            setTimeout(this.sideTransition, 500)
-        }
+        console.log(type);
+        setTimeout(this.toggleProject.bind(null, type), 500);
     }
 
-    trainingTransition() {
-        let trainingCards = document.querySelectorAll(".training-card");
-        for (let i = 0; i < trainingCards.length; ++i) {
-            trainingCards[i].classList.toggle("show")
+    toggleProject (type) {
+        console.log(type);
+
+        let cards = document.querySelectorAll("." + type + "-card");
+        for (let i = 0; i < cards.length; ++i) {
+            cards[i].classList.toggle("show")
         }
 
-        let trainingWrapper = document.querySelectorAll(".training-wrapper");
-        for (let i = 0; i < trainingWrapper.length; ++i) {
-            trainingWrapper[i].classList.toggle("show")
+        let wrapper = document.querySelectorAll("." + type + "-wrapper");
+        for (let i = 0; i < wrapper.length; ++i) {
+            wrapper[i].classList.toggle("show")
         }
 
-        document.querySelector(".training-row").classList.toggle("show")
-    }
-
-    mainTransition() {
-        let mainCards = document.querySelectorAll(".main-card");
-        for (let i = 0; i < mainCards.length; ++i) {
-            mainCards[i].classList.toggle("show")
-        }
-
-        let mainWrapper = document.querySelectorAll(".main-wrapper");
-        for (let i = 0; i < mainWrapper.length; ++i) {
-            mainWrapper[i].classList.toggle("show")
-        }
-
-        document.querySelector(".main-row").classList.toggle("show")
-    }
-
-    sideTransition() {
-        let sideCards = document.querySelectorAll(".side-card");
-        for (let i = 0; i < sideCards.length; ++i) {
-            sideCards[i].classList.toggle("show")
-        }
-
-        let sideWrapper = document.querySelectorAll(".side-wrapper");
-        for (let i = 0; i < sideWrapper.length; ++i) {
-            sideWrapper[i].classList.toggle("show")
-        }
-
-        document.querySelector(".side-row").classList.toggle("show")
+        document.querySelector("." + type + "-row").classList.toggle("show")
     }
 }
 
