@@ -78,6 +78,10 @@ h2 {
     height: 10px;
 }
 
+.invisible {
+    display: none;
+}
+
 .quest-row {
     display: flex;
     position: absolute;
@@ -133,6 +137,9 @@ h2 {
     height: 650px;
     perspective: 900px;
     transition: .5s all ease;
+}
+.wrapper.clicked {
+    width: 90%;
 }
 
 .card {

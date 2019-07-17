@@ -23,7 +23,11 @@ class QuestJournal extends React.Component{
 
     constructor (props){
         super(props);
-        this.toggleQuest = this.toggleQuest.bind(this);
+
+        this.state = {mcpSize: "col-lg-4 col-md-6", mcmasterSize: "col-lg-4 col-md-6", fiaSize: "col-lg-4 col-md-12"};
+
+        QuestJournal.toggleQuest = QuestJournal.toggleQuest.bind(this);
+        this.toggleProjectCard = this.toggleProjectCard.bind(this);
     }
 
     render() {
@@ -49,7 +53,7 @@ class QuestJournal extends React.Component{
                     <div className="col-lg-4 col-md-6">
                         <QuestCard
                             cardClass="card quest-card card-pink"
-                            cardTransition={() => this.toggleQuest("training")}
+                            cardTransition={() => QuestJournal.toggleQuest("training")}
                             title='TRAINING QUESTS'
                             questImg={degree}
                             imgClass="quest-type-white"
@@ -58,7 +62,7 @@ class QuestJournal extends React.Component{
                     <div className="col-lg-4 col-md-6">
                         <QuestCard
                             cardClass="card quest-card card-orange"
-                            cardTransition={() => this.toggleQuest("main")}
+                            cardTransition={() => QuestJournal.toggleQuest("main")}
                             title="MAIN QUESTS"
                             questImg={tie}
                             imgClass="quest-type-black"
@@ -67,7 +71,7 @@ class QuestJournal extends React.Component{
                     <div className="col-lg-4 col-md-12">
                         <QuestCard
                             cardClass="card quest-card card-pink"
-                            cardTransition={() => this.toggleQuest("side")}
+                            cardTransition={() => QuestJournal.toggleQuest("side")}
                             title="SIDE QUESTS"
                             questImg={pencilRuler}
                             imgClass="quest-type-white"
@@ -76,16 +80,17 @@ class QuestJournal extends React.Component{
                 </div>
 
                 <div className="row training-row">
-                    <div className="col-lg-4 col-md-6">
+                    <div className={this.state.mcpSize}>
                         <ProjectCard
                             wrappers="wrapper training-wrapper"
+                            clicked={() => this.toggleProjectCard()}
                             cardClass="card training-card card-pink"
                             title="MCMASTER COMPETITIVE PROGRAMMING"
                             projectImg={mcp}
                             imgClass="quest-type-white"
                         />
                     </div>
-                    <div className="col-lg-4 col-md-6">
+                    <div className={this.state.mcmasterSize}>
                         <ProjectCard
                             wrappers="wrapper training-wrapper"
                             cardClass="card training-card card-orange"
@@ -94,7 +99,7 @@ class QuestJournal extends React.Component{
                             imgClass="quest-type-black"
                         />
                     </div>
-                    <div className="col-lg-4 col-md-6">
+                    <div className={this.state.fiaSize}>
                         <ProjectCard
                             wrappers="wrapper training-wrapper"
                             cardClass="card training-card card-pink"
@@ -159,7 +164,7 @@ class QuestJournal extends React.Component{
         );
     }
 
-    toggleQuest(type) {
+    static toggleQuest(type) {
         let questCards = document.querySelectorAll(".quest-card");
         for (let i = 0; i < questCards.length; ++i) {
             questCards[i].classList.toggle("hide")
@@ -170,12 +175,10 @@ class QuestJournal extends React.Component{
             questWrapper[i].classList.toggle("hide")
         }
 
-        console.log(type);
-        setTimeout(this.toggleProject.bind(null, type), 500);
+        setTimeout(QuestJournal.toggleProjectRow.bind(null, type), 500);
     }
 
-    toggleProject (type) {
-        console.log(type);
+    static toggleProjectRow (type) {
 
         let cards = document.querySelectorAll("." + type + "-card");
         for (let i = 0; i < cards.length; ++i) {
@@ -188,6 +191,10 @@ class QuestJournal extends React.Component{
         }
 
         document.querySelector("." + type + "-row").classList.toggle("show")
+    }
+
+    toggleProjectCard (card) {
+        this.setState({mcpSize : "col-lg-12", mcmasterSize : "invisible", fiaSize : "invisible"});
     }
 }
 
