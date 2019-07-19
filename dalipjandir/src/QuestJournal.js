@@ -24,7 +24,8 @@ class QuestJournal extends React.Component{
     constructor (props){
         super(props);
 
-        this.state = {mcpSize: "col-lg-4 col-md-6", mcmasterSize: "col-lg-4 col-md-6", fiaSize: "col-lg-4 col-md-12"};
+        this.state = {mcpSize: "col-lg-4 col-md-6", mcmasterSize: "col-lg-4 col-md-6", fiaSize: "col-lg-4 col-md-12",
+        trainingRow: "row training-row justify-content-md-center"};
 
         QuestJournal.toggleQuest = QuestJournal.toggleQuest.bind(this);
         this.toggleProjectCard = this.toggleProjectCard.bind(this);
@@ -79,11 +80,12 @@ class QuestJournal extends React.Component{
                     </div>
                 </div>
 
-                <div className="row training-row">
+                <div className={this.state.trainingRow}>
                     <div className={this.state.mcpSize}>
                         <ProjectCard
                             wrappers="wrapper training-wrapper"
-                            clicked={() => this.toggleProjectCard()}
+                            clicked={() => this.toggleProjectCard({mcpSize : "col-lg-12", mcmasterSize : "invisible", fiaSize : "invisible"},
+                                ".training-wrapper", {trainingRow: "row training-row show justify-content-md-start"})}
                             cardClass="card training-card card-pink"
                             title="MCMASTER COMPETITIVE PROGRAMMING"
                             projectImg={mcp}
@@ -93,6 +95,8 @@ class QuestJournal extends React.Component{
                     <div className={this.state.mcmasterSize}>
                         <ProjectCard
                             wrappers="wrapper training-wrapper"
+                            clicked={() => this.toggleProjectCard({mcpSize : "invisible", mcmasterSize : "col-lg-12", fiaSize : "invisible"},
+                                ".training-wrapper", {trainingRow: "row training-row show justify-content-md-center"})}
                             cardClass="card training-card card-orange"
                             title="MCMASTER UNIVERSITY"
                             projectImg={mcmaster}
@@ -102,6 +106,8 @@ class QuestJournal extends React.Component{
                     <div className={this.state.fiaSize}>
                         <ProjectCard
                             wrappers="wrapper training-wrapper"
+                            clicked={() => this.toggleProjectCard({mcpSize : "invisible", mcmasterSize : "invisible", fiaSize : "col-lg-12"},
+                                ".training-wrapper", {trainingRow: "row training-row show justify-content-md-end"})}
                             cardClass="card training-card card-pink"
                             title="FLAG IDENTIFICATION APPLICATION"
                             projectImg={fia}
@@ -193,8 +199,14 @@ class QuestJournal extends React.Component{
         document.querySelector("." + type + "-row").classList.toggle("show")
     }
 
-    toggleProjectCard (card) {
-        this.setState({mcpSize : "col-lg-12", mcmasterSize : "invisible", fiaSize : "invisible"});
+    toggleProjectCard (card, wrapper, row) {
+        this.setState(card);
+        this.setState(row)
+
+        let wrappers = document.querySelectorAll(wrapper);
+        for (let i = 0; i < wrappers.length; ++i) {
+            wrappers[i].classList.toggle("clicked")
+        }
     }
 }
 
