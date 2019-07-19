@@ -2,7 +2,7 @@ import React from 'react';
 
 import './resources/css/QuestJournal.css';
 
-class ProjectCard extends React.Component{
+class ExpCard extends React.Component{
 
     render () {
         return (
@@ -16,4 +16,4 @@ class ProjectCard extends React.Component{
     }
 }
 
-export default ProjectCard
+export default ExpCard

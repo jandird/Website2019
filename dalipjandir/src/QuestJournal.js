@@ -3,7 +3,7 @@ import React from 'react';
 import './resources/css/QuestJournal.css';
 
 import QuestCard from './QuestCard.js'
-import ProjectCard from './ProjectCard.js'
+import ExpCard from './ExpCard.js'
 
 import back from './resources/images/back.png'
 
@@ -82,7 +82,7 @@ class QuestJournal extends React.Component{
 
                 <div className={this.state.trainingRow}>
                     <div className={this.state.mcpSize}>
-                        <ProjectCard
+                        <ExpCard
                             wrappers="wrapper training-wrapper"
                             clicked={() => this.toggleProjectCard({mcpSize : "col-lg-12", mcmasterSize : "invisible", fiaSize : "invisible"},
                                 ".training-wrapper", {trainingRow: "row training-row show justify-content-md-start"})}
@@ -93,7 +93,7 @@ class QuestJournal extends React.Component{
                         />
                     </div>
                     <div className={this.state.mcmasterSize}>
-                        <ProjectCard
+                        <ExpCard
                             wrappers="wrapper training-wrapper"
                             clicked={() => this.toggleProjectCard({mcpSize : "invisible", mcmasterSize : "col-lg-12", fiaSize : "invisible"},
                                 ".training-wrapper", {trainingRow: "row training-row show justify-content-md-center"})}
@@ -104,7 +104,7 @@ class QuestJournal extends React.Component{
                         />
                     </div>
                     <div className={this.state.fiaSize}>
-                        <ProjectCard
+                        <ExpCard
                             wrappers="wrapper training-wrapper"
                             clicked={() => this.toggleProjectCard({mcpSize : "invisible", mcmasterSize : "invisible", fiaSize : "col-lg-12"},
                                 ".training-wrapper", {trainingRow: "row training-row show justify-content-md-end"})}
@@ -118,7 +118,7 @@ class QuestJournal extends React.Component{
 
                 <div className="row main-row">
                     <div className="col-lg-4 col-md-6">
-                        <ProjectCard
+                        <ExpCard
                             wrappers="wrapper main-wrapper"
                             cardClass="card main-card card-pink"
                             title="ARCELORMITTAL DOFASCO"
@@ -127,7 +127,7 @@ class QuestJournal extends React.Component{
                         />
                     </div>
                     <div className="col-lg-4 col-md-6">
-                        <ProjectCard
+                        <ExpCard
                             wrappers="wrapper main-wrapper"
                             cardClass="card main-card card-orange"
                             title="DELOITTE DSPACE"
@@ -136,7 +136,7 @@ class QuestJournal extends React.Component{
                         />
                     </div>
                     <div className="col-lg-4 col-md-6">
-                        <ProjectCard
+                        <ExpCard
                             wrappers="wrapper main-wrapper"
                             cardClass="card main-card card-pink"
                             title="PREVIEW-ED"
@@ -148,7 +148,7 @@ class QuestJournal extends React.Component{
 
                 <div className="row side-row">
                     <div className="col-lg-6">
-                        <ProjectCard
+                        <ExpCard
                             wrappers="wrapper side-wrapper"
                             cardClass="card side-card card-pink"
                             title="PONG INFINITY"
@@ -157,7 +157,7 @@ class QuestJournal extends React.Component{
                         />
                     </div>
                     <div className="col-lg-6">
-                        <ProjectCard
+                        <ExpCard
                             wrappers="wrapper side-wrapper"
                             cardClass="card side-card card-orange"
                             title="DALIPJANDIR.CA"
