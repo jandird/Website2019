@@ -3,7 +3,7 @@
     top: 300%;
     width: 100%;
     height: auto;
-    min-height: 100%;
+    min-height: 110%;
     background-color: #171f29;
     color: WHITE;
     font-family: 'Raleway', sans-serif;
@@ -43,6 +43,9 @@ h1 {
     background: transparent;
     border: none;
     margin: 10px auto;
+}
+#back-button:hover {
+    z-index: 400;
 }
 
 #back-img {
@@ -138,10 +141,10 @@ h2 {
 .wrapper {
     left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto 0 auto;
     width: 400px;
-    height: 650px;
+    height: auto;
+    min-height: 650px;
     perspective: 900px;
     transition: .5s all ease;
 }
@@ -152,6 +155,7 @@ h2 {
 .card {
     top: 0;
     width: 100%;
+    min-height: 650px;
     height: 100%;
     transition: .5s all ease;
     box-shadow: 0 20px 50px BLACK;}
@@ -210,19 +214,7 @@ h2 {
     height: 100%;
 }
 
-.quest-type-white {
-    width: 250px;
-    height: 250px;
-    transition: 0.5s ease;
-
-    display: block;
-    margin: auto;
-    vertical-align: middle;
-
-    filter: brightness(0) invert(1);
-}
-
-.quest-type-black {
+.quest-img {
     width: 300px;
     height: 300px;
     transition: 0.5s ease;
@@ -230,7 +222,13 @@ h2 {
     display: block;
     margin: auto;
     vertical-align: middle;
+}
 
+.quest-img-white {
+    filter: brightness(0) invert(1);
+}
+
+.quest-img-black {
     filter: brightness(0);
 }
 
@@ -309,4 +307,27 @@ h2 {
     cursor: pointer;
     transform: rotate(0deg) scale(1);
     z-index: 400;
+}
+
+.title-row {
+    height: 200px;
+}
+
+.logo-row {
+    height: 300px;
+}
+
+.card-skill-img {
+    display: block;
+    margin: 30px auto 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+.card-skill-white {
+    filter: brightness(0) invert(1);
+}
+
+.card-skill-black {
+    filter: brightness(0);
 }

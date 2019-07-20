@@ -19,19 +19,48 @@ import arcelorMittal from './resources/images/arcelor-mittal.png'
 import deloitte from './resources/images/deloitte.png'
 import previewED from './resources/images/preview-ed.png'
 
+import me from "./resources/images/me.png";
+import pongInf from "./resources/images/pong-inf.png"
+
+import android from "./resources/images/skills/android.png"
+import java from "./resources/images/skills/java.png";
+import kotlin from "./resources/images/skills/kotlin.png";
+import python from "./resources/images/skills/python.png";
+import html from "./resources/images/skills/html.png";
+import css from "./resources/images/skills/css.png";
+import js from "./resources/images/skills/js.png";
+import spring from "./resources/images/skills/spring.png";
+import react from "./resources/images/skills/react.png";
+import bootstrap from "./resources/images/skills/bootstrap.png";
+import sql from "./resources/images/skills/sql.png";
+import git from "./resources/images/skills/git.png";
+import photoshop from "./resources/images/skills/photoshop.png";
+
 class QuestJournal extends React.Component{
 
     constructor (props){
         super(props);
 
         this.state = {mcpSize: "col-lg-4 col-md-6", mcmasterSize: "col-lg-4 col-md-6", fiaSize: "col-lg-4 col-md-12",
-        trainingRow: "row training-row justify-content-md-center"};
+        trainingRow: "row training-row justify-content-md-center", type: null};
 
-        QuestJournal.toggleQuest = QuestJournal.toggleQuest.bind(this);
+        this.toggleQuest = this.toggleQuest.bind(this);
+        this.toggleProjectRow = this.toggleProjectRow.bind(this);
         this.toggleProjectCard = this.toggleProjectCard.bind(this);
+
     }
 
     render() {
+        let mcpSkills = [java, python];
+        let fiaSkills = [java, android];
+
+        let arcelorMittalSkills = [kotlin, spring, sql];
+        let deloitteSkills = [kotlin, spring, react];
+        let previewEDSkills = [java];
+
+        let pongInfSkills = [java, android];
+        let djSkills = [react];
+
         return (
             <div id="quest-journal" className="container-fluid">
 
@@ -45,7 +74,7 @@ class QuestJournal extends React.Component{
                     <div id="smallUnderline"/>
                 </div>
                 <div className="row">
-                    <button id="back-button">
+                    <button id="back-button" onClick={() => this.toggleQuest(this.state.type)}>
                         <img src={back} alt="back" id="back-img"/>
                     </button>
                 </div>
@@ -54,28 +83,28 @@ class QuestJournal extends React.Component{
                     <div className="col-lg-4 col-md-6">
                         <QuestCard
                             cardClass="card quest-card card-pink"
-                            cardTransition={() => QuestJournal.toggleQuest("training")}
+                            cardTransition={() => this.toggleQuest("training")}
                             title='TRAINING QUESTS'
                             questImg={degree}
-                            imgClass="quest-type-white"
+                            imgClass="quest-img quest-img-white"
                         />
                     </div>
                     <div className="col-lg-4 col-md-6">
                         <QuestCard
                             cardClass="card quest-card card-orange"
-                            cardTransition={() => QuestJournal.toggleQuest("main")}
+                            cardTransition={() => this.toggleQuest("main")}
                             title="MAIN QUESTS"
                             questImg={tie}
-                            imgClass="quest-type-black"
+                            imgClass="quest-img quest-img-black"
                         />
                     </div>
                     <div className="col-lg-4 col-md-12">
                         <QuestCard
                             cardClass="card quest-card card-pink"
-                            cardTransition={() => QuestJournal.toggleQuest("side")}
+                            cardTransition={() => this.toggleQuest("side")}
                             title="SIDE QUESTS"
                             questImg={pencilRuler}
-                            imgClass="quest-type-white"
+                            imgClass="quest-img quest-img-white"
                         />
                     </div>
                 </div>
@@ -89,7 +118,9 @@ class QuestJournal extends React.Component{
                             cardClass="card training-card card-pink"
                             title="MCMASTER COMPETITIVE PROGRAMMING"
                             projectImg={mcp}
-                            imgClass="quest-type-white"
+                            imgClass="quest-img quest-img-white"
+                            skills = {mcpSkills}
+                            skillClass = "card-skill-img card-skill-white"
                         />
                     </div>
                     <div className={this.state.mcmasterSize}>
@@ -100,7 +131,7 @@ class QuestJournal extends React.Component{
                             cardClass="card training-card card-orange"
                             title="MCMASTER UNIVERSITY"
                             projectImg={mcmaster}
-                            imgClass="quest-type-black"
+                            imgClass="quest-img quest-img-black"
                         />
                     </div>
                     <div className={this.state.fiaSize}>
@@ -111,7 +142,9 @@ class QuestJournal extends React.Component{
                             cardClass="card training-card card-pink"
                             title="FLAG IDENTIFICATION APPLICATION"
                             projectImg={fia}
-                            imgClass="quest-type-white"
+                            imgClass="quest-img quest-img-white"
+                            skills = {fiaSkills}
+                            skillClass = "card-skill-img card-skill-white"
                         />
                     </div>
                 </div>
@@ -123,7 +156,9 @@ class QuestJournal extends React.Component{
                             cardClass="card main-card card-pink"
                             title="ARCELORMITTAL DOFASCO"
                             projectImg={arcelorMittal}
-                            imgClass="quest-type-white"
+                            imgClass="quest-img quest-img-white"
+                            skills = {arcelorMittalSkills}
+                            skillClass = "card-skill-img card-skill-white"
                         />
                     </div>
                     <div className="col-lg-4 col-md-6">
@@ -132,7 +167,9 @@ class QuestJournal extends React.Component{
                             cardClass="card main-card card-orange"
                             title="DELOITTE DSPACE"
                             projectImg={deloitte}
-                            imgClass="quest-type-black"
+                            imgClass="quest-img quest-img-black"
+                            skills = {deloitteSkills}
+                            skillClass = "card-skill-img card-skill-black"
                         />
                     </div>
                     <div className="col-lg-4 col-md-6">
@@ -141,7 +178,9 @@ class QuestJournal extends React.Component{
                             cardClass="card main-card card-pink"
                             title="PREVIEW-ED"
                             projectImg={previewED}
-                            imgClass="quest-type-white"
+                            imgClass="quest-img"
+                            skills = {previewEDSkills}
+                            skillClass = "card-skill-img card-skill-white"
                         />
                     </div>
                 </div>
@@ -152,8 +191,10 @@ class QuestJournal extends React.Component{
                             wrappers="wrapper side-wrapper"
                             cardClass="card side-card card-pink"
                             title="PONG INFINITY"
-                            projectImg={mcp}
-                            imgClass="quest-type-white"
+                            projectImg={pongInf}
+                            imgClass="quest-img"
+                            skills = {pongInfSkills}
+                            skillClass = "card-skill-img card-skill-white"
                         />
                     </div>
                     <div className="col-lg-6">
@@ -161,8 +202,10 @@ class QuestJournal extends React.Component{
                             wrappers="wrapper side-wrapper"
                             cardClass="card side-card card-orange"
                             title="DALIPJANDIR.CA"
-                            projectImg={mcp}
-                            imgClass="quest-type-white"
+                            projectImg={me}
+                            imgClass="quest-img"
+                            skills = {djSkills}
+                            skillClass = "card-skill-img card-skill-black"
                         />
                     </div>
                 </div>
@@ -170,7 +213,7 @@ class QuestJournal extends React.Component{
         );
     }
 
-    static toggleQuest(type) {
+    toggleQuest(type) {
         let questCards = document.querySelectorAll(".quest-card");
         for (let i = 0; i < questCards.length; ++i) {
             questCards[i].classList.toggle("hide")
@@ -181,10 +224,17 @@ class QuestJournal extends React.Component{
             questWrapper[i].classList.toggle("hide")
         }
 
-        setTimeout(QuestJournal.toggleProjectRow.bind(null, type), 500);
+        setTimeout(this.toggleProjectRow.bind(null, type), 500);
     }
 
-    static toggleProjectRow (type) {
+    toggleProjectRow (type) {
+        let stateType = this.state.type;
+        if (stateType === null){
+            this.setState({type: type})
+        }
+        else {
+            this.setState({type: null})
+        }
 
         let cards = document.querySelectorAll("." + type + "-card");
         for (let i = 0; i < cards.length; ++i) {
@@ -201,7 +251,7 @@ class QuestJournal extends React.Component{
 
     toggleProjectCard (card, wrapper, row) {
         this.setState(card);
-        this.setState(row)
+        this.setState(row);
 
         let wrappers = document.querySelectorAll(wrapper);
         for (let i = 0; i < wrappers.length; ++i) {
