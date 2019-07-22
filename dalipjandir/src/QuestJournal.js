@@ -41,13 +41,25 @@ class QuestJournal extends React.Component{
     constructor (props){
         super(props);
 
-        this.state = {mcpSize: "col-lg-4 col-md-6", mcmasterSize: "col-lg-4 col-md-6", fiaSize: "col-lg-4 col-md-12",
-        trainingRow: "row training-row justify-content-md-center", type: null};
+        this.state = {
+            trainingRow: "row training-row justify-content-md-center",
+            mcpSize: "col-lg-4 col-md-6",
+            mcmasterSize: "col-lg-4 col-md-6",
+            fiaSize: "col-lg-4 col-md-12",
+
+            mainRow: "row main-row justify-content-md-center",
+            arcelorMittalSize: "col-lg-4 col-md-6",
+            deloitteSize: "col-lg-4 col-md-6",
+            previewEDSize: "col-lg-4 col-md-12",
+
+            sideRow: "row side-row justify-content-md-center",
+            pongInfSize: "col-lg-4 col-md-6",
+            djSize: "col-lg-4 col-md-12"
+        };
 
         this.toggleQuest = this.toggleQuest.bind(this);
         this.toggleProjectRow = this.toggleProjectRow.bind(this);
-        this.toggleProjectCard = this.toggleProjectCard.bind(this);
-
+        this.toggleTrainingProjectCard = this.toggleTrainingProjectCard.bind(this);
     }
 
     render() {
@@ -113,7 +125,7 @@ class QuestJournal extends React.Component{
                     <div className={this.state.mcpSize}>
                         <ExpCard
                             wrappers="wrapper training-wrapper"
-                            clicked={() => this.toggleProjectCard({mcpSize : "col-lg-12", mcmasterSize : "invisible", fiaSize : "invisible"},
+                            clicked={() => this.toggleTrainingProjectCard({mcpSize : "anim-row col-lg-12", mcmasterSize : "invisible", fiaSize : "invisible"},
                                 ".training-wrapper", {trainingRow: "row training-row show justify-content-md-start"})}
                             cardClass="card training-card card-pink"
                             title="MCMASTER COMPETITIVE PROGRAMMING"
@@ -126,7 +138,7 @@ class QuestJournal extends React.Component{
                     <div className={this.state.mcmasterSize}>
                         <ExpCard
                             wrappers="wrapper training-wrapper"
-                            clicked={() => this.toggleProjectCard({mcpSize : "invisible", mcmasterSize : "col-lg-12", fiaSize : "invisible"},
+                            clicked={() => this.toggleTrainingProjectCard({mcpSize : "invisible", mcmasterSize : "anim-row col-lg-12", fiaSize : "invisible"},
                                 ".training-wrapper", {trainingRow: "row training-row show justify-content-md-center"})}
                             cardClass="card training-card card-orange"
                             title="MCMASTER UNIVERSITY"
@@ -137,7 +149,7 @@ class QuestJournal extends React.Component{
                     <div className={this.state.fiaSize}>
                         <ExpCard
                             wrappers="wrapper training-wrapper"
-                            clicked={() => this.toggleProjectCard({mcpSize : "invisible", mcmasterSize : "invisible", fiaSize : "col-lg-12"},
+                            clicked={() => this.toggleTrainingProjectCard({mcpSize : "invisible", mcmasterSize : "invisible", fiaSize : "anim-row col-lg-12"},
                                 ".training-wrapper", {trainingRow: "row training-row show justify-content-md-end"})}
                             cardClass="card training-card card-pink"
                             title="FLAG IDENTIFICATION APPLICATION"
@@ -149,7 +161,7 @@ class QuestJournal extends React.Component{
                     </div>
                 </div>
 
-                <div className="row main-row">
+                <div className={this.state.mainRow}>
                     <div className="col-lg-4 col-md-6">
                         <ExpCard
                             wrappers="wrapper main-wrapper"
@@ -185,7 +197,7 @@ class QuestJournal extends React.Component{
                     </div>
                 </div>
 
-                <div className="row side-row">
+                <div className={this.state.sideRow}>
                     <div className="col-lg-6">
                         <ExpCard
                             wrappers="wrapper side-wrapper"
@@ -249,10 +261,24 @@ class QuestJournal extends React.Component{
         document.querySelector("." + type + "-row").classList.toggle("show")
     }
 
-    toggleProjectCard (card, wrapper, row) {
-        this.setState(card);
+    toggleTrainingProjectCard (card, wrapper, row) {
+
+        if (card.mcpSize === this.state.mcpSize){
+            this.setState( {
+                mcpSize: "col-lg-4 col-md-6",
+                mcmasterSize: "col-lg-4 col-md-6",
+                fiaSize: "col-lg-4 col-md-12"
+            })
+        }
+        else {
+            this.setState(card);
+        }
         this.setState(row);
 
+        QuestJournal.toggleWrapper(wrapper)
+    }
+
+    static toggleWrapper(wrapper){
         let wrappers = document.querySelectorAll(wrapper);
         for (let i = 0; i < wrappers.length; ++i) {
             wrappers[i].classList.toggle("clicked")
