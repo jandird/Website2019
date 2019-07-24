@@ -26,15 +26,10 @@ import android from "./resources/images/skills/android.png"
 import java from "./resources/images/skills/java.png";
 import kotlin from "./resources/images/skills/kotlin.png";
 import python from "./resources/images/skills/python.png";
-import html from "./resources/images/skills/html.png";
-import css from "./resources/images/skills/css.png";
-import js from "./resources/images/skills/js.png";
 import spring from "./resources/images/skills/spring.png";
 import react from "./resources/images/skills/react.png";
 import bootstrap from "./resources/images/skills/bootstrap.png";
 import sql from "./resources/images/skills/sql.png";
-import git from "./resources/images/skills/git.png";
-import photoshop from "./resources/images/skills/photoshop.png";
 
 class QuestJournal extends React.Component{
 
@@ -71,7 +66,7 @@ class QuestJournal extends React.Component{
         let previewEDSkills = [java];
 
         let pongInfSkills = [java, android];
-        let djSkills = [react];
+        let djSkills = [react, bootstrap];
 
         return (
             <div id="quest-journal" className="container-fluid">
