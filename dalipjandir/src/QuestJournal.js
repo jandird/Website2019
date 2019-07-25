@@ -120,7 +120,7 @@ class QuestJournal extends React.Component{
                     <div className={this.state.mcpSize}>
                         <ExpCard
                             wrappers="wrapper training-wrapper"
-                            clicked={() => this.toggleTrainingProjectCard({mcpSize : "anim-row col-lg-12", mcmasterSize : "invisible", fiaSize : "invisible"},
+                            clicked={() => this.toggleTrainingProjectCard({mcpSize : "col-lg-12", mcmasterSize : "invisible", fiaSize : "invisible"},
                                 ".training-wrapper", {trainingRow: "row training-row show justify-content-md-start"})}
                             cardClass="card training-card card-pink"
                             title="MCMASTER COMPETITIVE PROGRAMMING"
