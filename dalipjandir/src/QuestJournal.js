@@ -48,13 +48,16 @@ class QuestJournal extends React.Component{
             previewEDSize: "col-lg-4 col-md-12",
 
             sideRow: "row side-row justify-content-md-center",
-            pongInfSize: "col-lg-4 col-md-6",
-            djSize: "col-lg-4 col-md-12"
+            pongInfSize: "col-lg-6",
+            djSize: "col-lg-6"
         };
 
         this.toggleQuest = this.toggleQuest.bind(this);
         this.toggleProjectRow = this.toggleProjectRow.bind(this);
+
         this.toggleTrainingProjectCard = this.toggleTrainingProjectCard.bind(this);
+        this.toggleMainProjectCard = this.toggleMainProjectCard.bind(this);
+        this.toggleSideProjectCard = this.toggleSideProjectCard.bind(this);
     }
 
     render() {
@@ -62,7 +65,7 @@ class QuestJournal extends React.Component{
         let fiaSkills = [java, android];
 
         let arcelorMittalSkills = [kotlin, spring, sql];
-        let deloitteSkills = [kotlin, spring, react];
+        let deloitteSkills = [kotlin, spring, react, python];
         let previewEDSkills = [java];
 
         let pongInfSkills = [java, android];
@@ -120,7 +123,7 @@ class QuestJournal extends React.Component{
                     <div className={this.state.mcpSize}>
                         <ExpCard
                             wrappers="wrapper training-wrapper"
-                            clicked={() => this.toggleTrainingProjectCard({mcpSize : "col-lg-12", mcmasterSize : "invisible", fiaSize : "invisible"},
+                            clicked={() => this.toggleTrainingProjectCard({mcpSize : "anim-row col-lg-12", mcmasterSize : "invisible", fiaSize : "invisible"},
                                 ".training-wrapper", {trainingRow: "row training-row show justify-content-md-start"})}
                             cardClass="card training-card card-pink"
                             title="MCMASTER COMPETITIVE PROGRAMMING"
@@ -157,9 +160,11 @@ class QuestJournal extends React.Component{
                 </div>
 
                 <div className={this.state.mainRow}>
-                    <div className="col-lg-4 col-md-6">
+                    <div className={this.state.arcelorMittalSize}>
                         <ExpCard
                             wrappers="wrapper main-wrapper"
+                            clicked={() => this.toggleMainProjectCard({arcelorMittalSize : "anim-row col-lg-12", deloitteSize : "invisible", previewEDSize : "invisible"},
+                                ".main-wrapper", {mainRow: "row main-row show justify-content-md-start"})}
                             cardClass="card main-card card-pink"
                             title="ARCELORMITTAL DOFASCO"
                             projectImg={arcelorMittal}
@@ -168,9 +173,11 @@ class QuestJournal extends React.Component{
                             skillClass = "card-skill-img card-skill-white"
                         />
                     </div>
-                    <div className="col-lg-4 col-md-6">
+                    <div className={this.state.deloitteSize}>
                         <ExpCard
                             wrappers="wrapper main-wrapper"
+                            clicked={() => this.toggleMainProjectCard({arcelorMittalSize : "invisible", deloitteSize : "anim-row col-lg-12", previewEDSize : "invisible"},
+                                ".main-wrapper", {mainRow: "row main-row show justify-content-md-center"})}
                             cardClass="card main-card card-orange"
                             title="DELOITTE DSPACE"
                             projectImg={deloitte}
@@ -179,9 +186,11 @@ class QuestJournal extends React.Component{
                             skillClass = "card-skill-img card-skill-black"
                         />
                     </div>
-                    <div className="col-lg-4 col-md-6">
+                    <div className={this.state.previewEDSize}>
                         <ExpCard
                             wrappers="wrapper main-wrapper"
+                            clicked={() => this.toggleMainProjectCard({arcelorMittalSize : "invisible", deloitteSize : "invisible", previewEDSize : "anim-row col-lg-12"},
+                                ".main-wrapper", {mainRow: "row main-row show justify-content-md-end"})}
                             cardClass="card main-card card-pink"
                             title="PREVIEW-ED"
                             projectImg={previewED}
@@ -193,9 +202,11 @@ class QuestJournal extends React.Component{
                 </div>
 
                 <div className={this.state.sideRow}>
-                    <div className="col-lg-6">
+                    <div className={this.state.pongInfSize}>
                         <ExpCard
                             wrappers="wrapper side-wrapper"
+                            clicked={() => this.toggleSideProjectCard({pongInfSize : "anim-row col-lg-12", djSize : "invisible"},
+                                ".side-wrapper", {sideRow: "row side-row show justify-content-md-start"})}
                             cardClass="card side-card card-pink"
                             title="PONG INFINITY"
                             projectImg={pongInf}
@@ -204,9 +215,11 @@ class QuestJournal extends React.Component{
                             skillClass = "card-skill-img card-skill-white"
                         />
                     </div>
-                    <div className="col-lg-6">
+                    <div className={this.state.djSize}>
                         <ExpCard
                             wrappers="wrapper side-wrapper"
+                            clicked={() => this.toggleSideProjectCard({pongInfSize : "invisible", djSize : "anim-row col-lg-12"},
+                                ".side-wrapper", {sideRow: "row side-row show justify-content-md-end"})}
                             cardClass="card side-card card-orange"
                             title="DALIPJANDIR.CA"
                             projectImg={me}
@@ -263,6 +276,39 @@ class QuestJournal extends React.Component{
                 mcpSize: "col-lg-4 col-md-6",
                 mcmasterSize: "col-lg-4 col-md-6",
                 fiaSize: "col-lg-4 col-md-12"
+            })
+        }
+        else {
+            this.setState(card);
+        }
+        this.setState(row);
+
+        QuestJournal.toggleWrapper(wrapper)
+    }
+
+    toggleMainProjectCard (card, wrapper, row) {
+
+        if (card.arcelorMittalSize === this.state.arcelorMittalSize){
+            this.setState( {
+                arcelorMittalSize: "col-lg-4 col-md-6",
+                deloitteSize: "col-lg-4 col-md-6",
+                previewEDSize: "col-lg-4 col-md-12"
+            })
+        }
+        else {
+            this.setState(card);
+        }
+        this.setState(row);
+
+        QuestJournal.toggleWrapper(wrapper)
+    }
+
+    toggleSideProjectCard (card, wrapper, row) {
+
+        if (card.pongInfSize === this.state.pongInfSize){
+            this.setState( {
+                pongInfSize: "col-lg-6",
+                djSize: "col-lg-6"
             })
         }
         else {

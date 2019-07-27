@@ -317,11 +317,15 @@ h2 {
     height: 300px;
 }
 
+.no-padding {
+    padding: 0;
+}
+
 .card-skill-img {
     display: block;
     margin: 30px auto 0 auto;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
 }
 
 .card-skill-white {
