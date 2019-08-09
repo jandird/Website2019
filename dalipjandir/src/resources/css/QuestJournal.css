@@ -337,9 +337,23 @@ h2 {
 }
 
 .details {
-    display: none;
+    font-size: 20pt;
+    visibility: hidden;
+    transition: all 0s ease-out 0s;
 }
 .details.show {
-    display: block;
+    visibility: visible;
+    animation: fadeIn 1s;
+    animation-delay: .5s;
+    transition: all 0s ease-in .5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 

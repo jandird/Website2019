@@ -8,6 +8,7 @@ class ExpCard extends React.Component{
         super(props);
 
         this.state = {
+            expanded: false,
             logo: "col-12",
             details: "col-0 details"
         };
@@ -50,8 +51,20 @@ class ExpCard extends React.Component{
     }
 
     expand () {
-        this.setState({ logo: "col-6",
-            details: "col-6 details show"})
+        if (this.state.expanded === false) {
+            this.setState({
+                expanded: true,
+                logo: "col-6",
+                details: "col-6 details show"
+            })
+        }
+        else {
+            this.setState({
+                expanded: false,
+                logo: "col-12",
+                details: "col-0 details"
+            })
+        }
     }
 }
 
