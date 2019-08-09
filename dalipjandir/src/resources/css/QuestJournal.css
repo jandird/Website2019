@@ -335,3 +335,11 @@ h2 {
 .card-skill-black {
     filter: brightness(0);
 }
+
+.details {
+    display: none;
+}
+.details.show {
+    display: block;
+}
+
