@@ -168,7 +168,7 @@ h2 {
 }
 
 .quest-card {
-    transform: rotateX(50deg) scale(0.7);
+    transform: rotateX(40deg) scale(0.7);
     transition: .5s all ease-in-out;
     opacity: 1;
     z-index: 1;
@@ -236,7 +236,7 @@ h2 {
     font-size: 35pt;
     font-weight: 800;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
     line-height: 60px;
 }
 
@@ -253,7 +253,7 @@ h2 {
     opacity: 0;
 }
 .training-card.show {
-    transform: rotateX(50deg) scale(0.7);
+    transform: rotateX(40deg) scale(0.7);
     visibility: visible;
     opacity: 1;
 }
@@ -276,7 +276,7 @@ h2 {
     opacity: 0;
 }
 .main-card.show {
-    transform: rotateX(50deg) scale(0.7);
+    transform: rotateX(40deg) scale(0.7);
     visibility: visible;
     opacity: 1;
 }
@@ -299,7 +299,7 @@ h2 {
     opacity: 0;
 }
 .side-card.show {
-    transform: rotateX(50deg) scale(0.7);
+    transform: rotateX(40deg) scale(0.7);
     visibility: visible;
     opacity: 1;
 }
@@ -310,11 +310,13 @@ h2 {
 }
 
 .title-row {
+    width: 300px;
     height: 200px;
 }
 
 .logo-row {
-    height: 300px;
+    min-height: 300px;
+    height: auto;
 }
 
 .no-padding {
@@ -338,14 +340,16 @@ h2 {
 
 .details {
     font-size: 20pt;
-    visibility: hidden;
+    display: none;
+    opacity: 0;
     transition: all 0s ease-out 0s;
 }
 .details.show {
-    visibility: visible;
+    display: block;
+    opacity: 1;
     animation: fadeIn 1s;
     animation-delay: .5s;
-    transition: all 0s ease-in .5s;
+    transition: all 0s ease-in .1s;
 }
 
 @keyframes fadeIn {
@@ -356,4 +360,3 @@ h2 {
         opacity: 1;
     }
 }
-

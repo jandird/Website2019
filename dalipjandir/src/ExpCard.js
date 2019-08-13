@@ -13,7 +13,8 @@ class ExpCard extends React.Component{
             details: "col-0 details"
         };
 
-        this.expand = this.expand.bind(this)
+        this.expand = this.expand.bind(this);
+        this.show = this.show.bind(this);
     }
 
     render () {
@@ -32,12 +33,15 @@ class ExpCard extends React.Component{
                             <div className="row title-row">
                                 <p className="project-title">{this.props.title}</p>
                             </div>
-                            <div className="row logo-row justify-content-center">
+                            <div className="row logo-row anim-row justify-content-center">
                                 <div className={this.state.logo}>
                                     <img src={this.props.projectImg} alt="mcmaster" className={this.props.imgClass}/>
                                 </div>
                                 <div className={this.state.details}>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                    <ul>
+                                        <li>Dalip is a member of McMaster's Competitive Programming Team</li>
+                                        <li>Dalip has competed in a variety of competitions including ICPC, Communitech's Code to Win, and Hackerrank Competitions</li>
+                                    </ul>
                                 </div>
                             </div>
                             <div className="row justify-content-center">
@@ -51,11 +55,15 @@ class ExpCard extends React.Component{
     }
 
     expand () {
+        setTimeout (this.show.bind(null), 500)
+    }
+
+    show () {
         if (this.state.expanded === false) {
             this.setState({
                 expanded: true,
-                logo: "col-6",
-                details: "col-6 details show"
+                logo: "col-lg-3",
+                details: "col-lg-9 details show"
             })
         }
         else {
