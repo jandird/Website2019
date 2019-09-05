@@ -26,7 +26,7 @@ class ExpCard extends React.Component{
         }
 
         return (
-            <div onClick={() => this.expand()}>
+            <div className="exp-card" onClick={() => this.expand()}>
                 <div className={this.props.wrappers} onClick={this.props.clicked}>
                     <div className={this.props.cardClass}>
                         <div className="container-fluid">

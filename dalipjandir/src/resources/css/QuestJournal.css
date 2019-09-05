@@ -3,16 +3,11 @@
     top: 300%;
     width: 100%;
     height: auto;
-    min-height: 105%;
+    min-height: 100%;
     background-color: #171f29;
     color: WHITE;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
-}
-
-#rel {
-    display: flex;
-    position: relative;
 }
 
 h1 {
@@ -98,43 +93,43 @@ h2 {
     top: 200px;
     width: 100%;
     height: auto;
-    z-index: 1;
 
     background: #171f29;
 }
 
 .training-row {
-    display: flex;
-    position: absolute;
+    display: none;
     top: 200px;
     width: 100%;
     height: auto;
     z-index: -1;
 }
 .training-row.show {
+    display: flex;
     z-index: 2;
 }
 
 .main-row {
-    display: flex;
-    position: absolute;
+    display: none;
     top: 200px;
     width: 100%;
     height: auto;
     z-index: -1;
 }
 .main-row.show {
+    display: flex;
     z-index: 2;
 }
 
 .side-row {
-    position: absolute;
+    display: none;
     top: 200px;
     width: 100%;
     height: auto;
     z-index: -1;
 }
 .side-row.show {
+    display: flex;
     z-index: 2;
 }
 
@@ -164,7 +159,7 @@ h2 {
     z-index: 1;
 }
 .quest-wrapper.hide {
-    z-index: 0;
+    z-index: -1;
 }
 
 .quest-card {
@@ -232,6 +227,20 @@ h2 {
     filter: brightness(0);
 }
 
+.exp-row {
+    width: 80%;
+    margin-bottom: 50px;
+    z-index: 2;
+}
+
+.exp-card {
+    width: 100%;
+}
+
+.card-rounded {
+    border-radius: 30px;
+}
+
 .project-title {
     font-size: 35pt;
     font-weight: 800;
@@ -247,43 +256,11 @@ h2 {
     z-index: 1;
 }
 
-.training-card {
-    transform: rotateX(90deg) scale(0.7);
-    visibility: hidden;
-    opacity: 0;
-}
-.training-card.show {
-    transform: rotateX(40deg) scale(0.7);
-    visibility: visible;
-    opacity: 1;
-}
-.training-card:hover {
-    cursor: pointer;
-    transform: rotate(0deg) scale(1);
-    z-index: 400;
-}
-
 .main-wrapper {
     z-index: -1;
 }
 .main-wrapper.show {
     z-index: 1;
-}
-
-.main-card {
-    transform: rotateX(90deg) scale(0.7);
-    visibility: hidden;
-    opacity: 0;
-}
-.main-card.show {
-    transform: rotateX(40deg) scale(0.7);
-    visibility: visible;
-    opacity: 1;
-}
-.main-card:hover {
-    cursor: pointer;
-    transform: rotate(0deg) scale(1);
-    z-index: 400;
 }
 
 .side-wrapper {
@@ -293,25 +270,9 @@ h2 {
     z-index: 1;
 }
 
-.side-card {
-    transform: rotateX(90deg) scale(0.7);
-    visibility: hidden;
-    opacity: 0;
-}
-.side-card.show {
-    transform: rotateX(40deg) scale(0.7);
-    visibility: visible;
-    opacity: 1;
-}
-.side-card:hover {
-    cursor: pointer;
-    transform: rotate(0deg) scale(1);
-    z-index: 400;
-}
-
 .title-row {
-    width: 300px;
-    height: 200px;
+    width: 90%;
+    height: auto;
 }
 
 .logo-row {
