@@ -8,13 +8,12 @@ class ExpCard extends React.Component{
         super(props);
 
         this.state = {
-            expanded: false,
-            logo: "col-12",
             details: "col-0 details"
         };
 
-        this.expand = this.expand.bind(this);
+
         this.show = this.show.bind(this);
+        this.hide = this.hide.bind(this);
     }
 
     render () {
@@ -26,26 +25,30 @@ class ExpCard extends React.Component{
         }
 
         return (
-            <div className="exp-card" onClick={() => this.expand()}>
+            <div className="exp-card" onMouseEnter={this.show} onMouseLeave={this.hide}>
                 <div className={this.props.wrappers} onClick={this.props.clicked}>
                     <div className={this.props.cardClass}>
                         <div className="container-fluid">
-                            <div className="row title-row">
-                                <p className="project-title">{this.props.title}</p>
-                            </div>
-                            <div className="row logo-row anim-row justify-content-center">
-                                <div className={this.state.logo}>
+                            <div className="row">
+                                <div className="col-lg-4">
+                                    <p className="project-title">{this.props.title}</p>
+                                </div>
+                                <div className="col-lg-4">
                                     <img src={this.props.projectImg} alt="mcmaster" className={this.props.imgClass}/>
                                 </div>
+                                <div className="col-lg-4">
+                                    <div className="row">
+                                        {skills}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
                                 <div className={this.state.details}>
                                     <ul>
                                         <li>Dalip is a member of McMaster's Competitive Programming Team</li>
                                         <li>Dalip has competed in a variety of competitions including ICPC, Communitech's Code to Win, and Hackerrank Competitions</li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div className="row justify-content-center">
-                                {skills}
                             </div>
                         </div>
                     </div>
@@ -54,25 +57,17 @@ class ExpCard extends React.Component{
         );
     }
 
-    expand () {
-        setTimeout (this.show.bind(null), 500)
+    show () {
+        this.setState({
+            details: "col-12 details show"
+        })
     }
 
-    show () {
-        if (this.state.expanded === false) {
-            this.setState({
-                expanded: true,
-                logo: "col-lg-3",
-                details: "col-lg-9 details show"
-            })
-        }
-        else {
-            this.setState({
-                expanded: false,
-                logo: "col-12",
-                details: "col-0 details"
-            })
-        }
+    hide () {
+        this.setState({
+
+            details: "col-0 details"
+        })
     }
 }
 

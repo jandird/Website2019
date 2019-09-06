@@ -112,7 +112,7 @@ class QuestJournal extends React.Component{
                             cardClass="card-rounded card-pink"
                             title="MCMASTER COMPETITIVE PROGRAMMING"
                             projectImg={mcp}
-                            imgClass="quest-img quest-img-white"
+                            imgClass="exp-img quest-img-white"
                             skills = {mcpSkills}
                             skillClass = "card-skill-img card-skill-white"
                         />
@@ -123,7 +123,7 @@ class QuestJournal extends React.Component{
                             cardClass="card-rounded card-orange"
                             title="MCMASTER UNIVERSITY"
                             projectImg={mcmaster}
-                            imgClass="quest-img quest-img-black"
+                            imgClass="exp-img quest-img-black"
                         />
                     </div>
                     <div className="exp-row row">
@@ -132,7 +132,7 @@ class QuestJournal extends React.Component{
                             cardClass="card-rounded card-pink"
                             title="FLAG IDENTIFICATION APPLICATION"
                             projectImg={fia}
-                            imgClass="quest-img quest-img-white"
+                            imgClass="exp-img quest-img-white"
                             skills = {fiaSkills}
                             skillClass = "card-skill-img card-skill-white"
                         />
@@ -140,35 +140,35 @@ class QuestJournal extends React.Component{
                 </div>
 
                 <div className={this.state.mainRow}>
-                    <div className={this.state.arcelorMittalSize}>
+                    <div className="exp-row row">
                         <ExpCard
-                            wrappers="wrapper main-wrapper"
-                            cardClass="card main-card card-pink"
+                            wrappers="main-wrapper"
+                            cardClass="card-rounded card-pink"
                             title="ARCELORMITTAL DOFASCO"
                             projectImg={arcelorMittal}
-                            imgClass="quest-img quest-img-white"
+                            imgClass="exp-img quest-img-white"
                             skills = {arcelorMittalSkills}
                             skillClass = "card-skill-img card-skill-white"
                         />
                     </div>
-                    <div className={this.state.deloitteSize}>
+                    <div className="exp-row row">
                         <ExpCard
-                            wrappers="wrapper main-wrapper"
-                            cardClass="card main-card card-orange"
+                            wrappers="main-wrapper"
+                            cardClass="card-rounded card-orange"
                             title="DELOITTE DSPACE"
                             projectImg={deloitte}
-                            imgClass="quest-img quest-img-black"
+                            imgClass="exp-img quest-img-black"
                             skills = {deloitteSkills}
                             skillClass = "card-skill-img card-skill-black"
                         />
                     </div>
-                    <div className={this.state.previewEDSize}>
+                    <div className="exp-row row">
                         <ExpCard
-                            wrappers="wrapper main-wrapper"
-                            cardClass="card main-card card-pink"
+                            wrappers="main-wrapper"
+                            cardClass="card-rounded card-pink"
                             title="PREVIEW-ED"
                             projectImg={previewED}
-                            imgClass="quest-img"
+                            imgClass="exp-img"
                             skills = {previewEDSkills}
                             skillClass = "card-skill-img card-skill-white"
                         />
@@ -176,24 +176,24 @@ class QuestJournal extends React.Component{
                 </div>
 
                 <div className={this.state.sideRow}>
-                    <div className={this.state.pongInfSize}>
+                    <div className="exp-row row">
                         <ExpCard
-                            wrappers="wrapper side-wrapper"
-                            cardClass="card side-card card-pink"
+                            wrappers="side-wrapper"
+                            cardClass="card-rounded card-pink"
                             title="PONG INFINITY"
                             projectImg={pongInf}
-                            imgClass="quest-img"
+                            imgClass="exp-img"
                             skills = {pongInfSkills}
                             skillClass = "card-skill-img card-skill-white"
                         />
                     </div>
-                    <div className={this.state.djSize}>
+                    <div className="exp-row row">
                         <ExpCard
-                            wrappers="wrapper side-wrapper"
-                            cardClass="card side-card card-orange"
+                            wrappers="side-wrapper"
+                            cardClass="card-rounded card-orange"
                             title="DALIPJANDIR.CA"
                             projectImg={me}
-                            imgClass="quest-img"
+                            imgClass="exp-img"
                             skills = {djSkills}
                             skillClass = "card-skill-img card-skill-black"
                         />
