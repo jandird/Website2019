@@ -243,7 +243,10 @@ h2 {
 
 .exp-card {
     width: 100%;
-    transition: ease-in-out .5s;
+}
+
+.exp-wrapper {
+    width: 100%;
 }
 
 .card-rounded {
@@ -255,27 +258,6 @@ h2 {
     font-weight: 800;
     margin-top: 20px;
     line-height: 60px;
-}
-
-.training-wrapper {
-    z-index: -1;
-}
-.training-wrapper.show {
-    z-index: 1;
-}
-
-.main-wrapper {
-    z-index: -1;
-}
-.main-wrapper.show {
-    z-index: 1;
-}
-
-.side-wrapper {
-    z-index: -1;
-}
-.side-wrapper.show {
-    z-index: 1;
 }
 
 .title-row {
@@ -317,7 +299,6 @@ h2 {
     display: block;
     opacity: 1;
     animation: fadeIn 1s;
-    animation-delay: .5s;
     transition: all 0s ease-in .1s;
 }
 
@@ -328,4 +309,8 @@ h2 {
     100% {
         opacity: 1;
     }
+}
+
+.animate-height {
+    width: 100%;
 }

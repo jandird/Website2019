@@ -1,16 +1,19 @@
 import React from 'react';
+import AnimateHeight from 'react-animate-height'
 
 import './resources/css/QuestJournal.css';
 import CardSkill from "./CardSkill";
 
 class ExpCard extends React.Component{
+
     constructor (props){
         super(props);
 
         this.state = {
-            details: "col-0 details"
+            details: "details",
+            height: 'auto',
+            animationClass: "rah-animating--down"
         };
-
 
         this.show = this.show.bind(this);
         this.hide = this.hide.bind(this);
@@ -25,49 +28,62 @@ class ExpCard extends React.Component{
         }
 
         return (
-            <div className="exp-card" onMouseEnter={this.show} onMouseLeave={this.hide}>
-                <div className={this.props.wrappers} onClick={this.props.clicked}>
-                    <div className={this.props.cardClass}>
-                        <div className="container-fluid">
-                            <div className="row">
-                                <div className="col-lg-4">
-                                    <p className="project-title">{this.props.title}</p>
-                                </div>
-                                <div className="col-lg-4">
-                                    <img src={this.props.projectImg} alt="mcmaster" className={this.props.imgClass}/>
-                                </div>
-                                <div className="col-lg-4">
-                                    <div className="row">
-                                        {skills}
+            <AnimateHeight duration={ 500 } height={ this.state.height } className="animate-height">
+                <div className="exp-card" onMouseEnter={this.show} onMouseLeave={this.hide}>
+                    <div className="exp-wrapper">
+                        <div className={this.props.cardClass}>
+                            <div className="container-fluid">
+                                <div className="row">
+                                    <div className="col-lg-4">
+                                        <p className="project-title">{this.props.title}</p>
+                                    </div>
+                                    <div className="col-lg-4">
+                                        <img src={this.props.projectImg} alt="mcmaster" className={this.props.imgClass}/>
+                                    </div>
+                                    <div className="col-lg-4">
+                                        <div className="row">
+                                            {skills}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="row">
-                                <div className={this.state.details}>
-                                    <ul>
-                                        <li>Dalip is a member of McMaster's Competitive Programming Team</li>
-                                        <li>Dalip has competed in a variety of competitions including ICPC, Communitech's Code to Win, and Hackerrank Competitions</li>
-                                    </ul>
+                                <div className="row">
+                                    <div className={this.state.details}>
+                                        <ul>
+                                            <li>Dalip is a member of McMaster's Competitive Programming Team</li>
+                                            <li>Dalip has competed in a variety of competitions including ICPC, Communitech's Code to Win, and Hackerrank Competitions</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </AnimateHeight>
         );
     }
 
     show () {
+        let currentHeight = document.querySelector(".exp-wrapper").clientHeight;
+        console.log(currentHeight);
+
         this.setState({
-            details: "col-12 details show"
-        })
+            height: "currentHeight"
+        });
+
+        setTimeout(this.expand.bind(this), 50)
+    }
+
+    expand(){
+        this.setState({
+            details: "details show",
+            height: "auto"
+        });
     }
 
     hide () {
         this.setState({
-
-            details: "col-0 details"
-        })
+            details: "details",
+        });
     }
 }
 

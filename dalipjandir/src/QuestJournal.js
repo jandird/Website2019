@@ -108,7 +108,6 @@ class QuestJournal extends React.Component{
                 <div className={this.state.trainingRow}>
                     <div className="exp-row row">
                         <ExpCard
-                            wrappers="training-wrapper"
                             cardClass="card-rounded card-pink"
                             title="MCMASTER COMPETITIVE PROGRAMMING"
                             projectImg={mcp}
@@ -119,7 +118,6 @@ class QuestJournal extends React.Component{
                     </div>
                     <div className="exp-row row">
                         <ExpCard
-                            wrappers="training-wrapper"
                             cardClass="card-rounded card-orange"
                             title="MCMASTER UNIVERSITY"
                             projectImg={mcmaster}
@@ -128,7 +126,6 @@ class QuestJournal extends React.Component{
                     </div>
                     <div className="exp-row row">
                         <ExpCard
-                            wrappers="training-wrapper"
                             cardClass="card-rounded card-pink"
                             title="FLAG IDENTIFICATION APPLICATION"
                             projectImg={fia}
@@ -142,7 +139,6 @@ class QuestJournal extends React.Component{
                 <div className={this.state.mainRow}>
                     <div className="exp-row row">
                         <ExpCard
-                            wrappers="main-wrapper"
                             cardClass="card-rounded card-pink"
                             title="ARCELORMITTAL DOFASCO"
                             projectImg={arcelorMittal}
@@ -153,7 +149,6 @@ class QuestJournal extends React.Component{
                     </div>
                     <div className="exp-row row">
                         <ExpCard
-                            wrappers="main-wrapper"
                             cardClass="card-rounded card-orange"
                             title="DELOITTE DSPACE"
                             projectImg={deloitte}
@@ -164,7 +159,6 @@ class QuestJournal extends React.Component{
                     </div>
                     <div className="exp-row row">
                         <ExpCard
-                            wrappers="main-wrapper"
                             cardClass="card-rounded card-pink"
                             title="PREVIEW-ED"
                             projectImg={previewED}
@@ -178,7 +172,6 @@ class QuestJournal extends React.Component{
                 <div className={this.state.sideRow}>
                     <div className="exp-row row">
                         <ExpCard
-                            wrappers="side-wrapper"
                             cardClass="card-rounded card-pink"
                             title="PONG INFINITY"
                             projectImg={pongInf}
@@ -189,7 +182,6 @@ class QuestJournal extends React.Component{
                     </div>
                     <div className="exp-row row">
                         <ExpCard
-                            wrappers="side-wrapper"
                             cardClass="card-rounded card-orange"
                             title="DALIPJANDIR.CA"
                             projectImg={me}
