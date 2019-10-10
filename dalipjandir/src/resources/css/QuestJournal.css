@@ -199,7 +199,7 @@ h2 {
 
 .card-orange {
     color: BLACK;
-    background: linear-gradient(30deg, #ffab91, #64ffda);
+    background: linear-gradient(30deg, #ffc1a9, #ecbae3);
     height: 100%;
 }
 
@@ -276,7 +276,7 @@ h2 {
 
 .card-skill-img {
     display: inherit;
-    margin: 20px auto 0 auto;
+    margin: 20px auto 20px auto;
     width: 90px;
     height: 90px;
 }
@@ -290,7 +290,8 @@ h2 {
 }
 
 .details {
-    font-size: 20pt;
+    font-size: 16pt;
+    margin: 10px 20px 10px 30px;
     display: none;
     opacity: 0;
     transition: all 0s ease-out 0s;

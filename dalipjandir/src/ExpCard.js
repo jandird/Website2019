@@ -49,8 +49,7 @@ class ExpCard extends React.Component{
                                 <div className="row">
                                     <div className={this.state.details}>
                                         <ul>
-                                            <li>Dalip is a member of McMaster's Competitive Programming Team</li>
-                                            <li>Dalip has competed in a variety of competitions including ICPC, Communitech's Code to Win, and Hackerrank Competitions</li>
+                                            {this.props.detailsList}
                                         </ul>
                                     </div>
                                 </div>

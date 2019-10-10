@@ -114,6 +114,10 @@ class QuestJournal extends React.Component{
                             imgClass="exp-img quest-img-white"
                             skills = {mcpSkills}
                             skillClass = "card-skill-img card-skill-white"
+                            detailsList = {<ul>
+                                                <li>I am a member of McMaster's Competitive Programming Team</li>
+                                                <li>As a member of the team I competed in a variety of competitions including ICPC, Communitech's Code to Win, and Hackerrank Competitions</li>
+                                           </ul>}
                         />
                     </div>
                     <div className="exp-row row">
@@ -122,6 +126,10 @@ class QuestJournal extends React.Component{
                             title="MCMASTER UNIVERSITY"
                             projectImg={mcmaster}
                             imgClass="exp-img quest-img-black"
+                            detailsList = {<ul>
+                                                <li>I am currently in my 5th and final year of Software Engineering & Co-Op at McMaster University</li>
+                                                <li>Currently maintain a CGPA of 3.7</li>
+                                           </ul>}
                         />
                     </div>
                     <div className="exp-row row">
@@ -132,6 +140,11 @@ class QuestJournal extends React.Component{
                             imgClass="exp-img quest-img-white"
                             skills = {fiaSkills}
                             skillClass = "card-skill-img card-skill-white"
+                            detailsList = {<ul>
+                                                <li>An Android application designed to allow users take a picture of and identify a flag</li>
+                                                <li>Project was completed through the use of Java and OpenCV for image recognition</li>
+                                                <li>An overall grade of 100% was achieved</li>
+                                           </ul>}
                         />
                     </div>
                 </div>
