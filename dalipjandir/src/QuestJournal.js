@@ -160,21 +160,34 @@ class QuestJournal extends React.Component{
                     <div className="exp-row row">
                         <ExpCard
                             cardClass="card-rounded card-pink"
-                            title="ARCELORMITTAL DOFASCO"
-                            projectImg={arcelorMittal}
+                            title="DELOITTE DSPACE"
+                            projectImg={deloitte}
                             imgClass="exp-img quest-img-white"
-                            skills = {arcelorMittalSkills}
+                            skills = {deloitteSkills}
                             skillClass = "card-skill-img card-skill-white"
+                            detailsList = {<ul>
+                                                <li>Position: Software Engineering / Prototyping Co-Op | May 2019 - Aug 2019</li>
+                                                <li>Developed a Blockchain Assurance Full Stack project through Kotlin, Spring Boot, React, and Corda</li>
+                                                <li>Worked in an agile scrum environment to provide bi-weekly demos and presentations to stakeholders</li>
+                                           </ul>}
                         />
                     </div>
                     <div className="exp-row row">
                         <ExpCard
                             cardClass="card-rounded card-orange"
-                            title="DELOITTE DSPACE"
-                            projectImg={deloitte}
+                            title="ARCELORMITTAL DOFASCO"
+                            projectImg={arcelorMittal}
                             imgClass="exp-img quest-img-black"
-                            skills = {deloitteSkills}
+                            skills = {arcelorMittalSkills}
                             skillClass = "card-skill-img card-skill-black"
+                            detailsList = {<ul>
+                                                <li>Position: Software Engineering / Data Analyst Co-Op | May 2018 - Apr 2019</li>
+                                                <li>Developed a backend web API to calculate profitability using Kotlin and Spring Boot</li>
+                                                <li>Modeled databases, schemas, and tables to support and store data for multiple projects</li>
+                                                <li>Developed C# and Java scripts to optimize workflow and efficiency of projects</li>
+                                                <li>Worked with Extract, Transform, Load (ETL) Tools to efficiently transform data and
+                                                    load tables for a variety of projects and support client platforms</li>
+                                           </ul>}
                         />
                     </div>
                     <div className="exp-row row">
@@ -185,6 +198,11 @@ class QuestJournal extends React.Component{
                             imgClass="exp-img"
                             skills = {previewEDSkills}
                             skillClass = "card-skill-img card-skill-white"
+                            detailsList = {<ul>
+                                                <li>Position: Freelance Software Engineer | Feb 2018 - Jun 2019</li>
+                                                <li>Independently designed, implemented, and maintained a Java application that is currently in use by long term care homes</li>
+                                                <li>Communicated consistently with the client to gather requirements and maintain application</li>
+                                           </ul>}
                         />
                     </div>
                 </div>
