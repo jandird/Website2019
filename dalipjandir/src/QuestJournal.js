@@ -39,9 +39,9 @@ class QuestJournal extends React.Component{
         super(props);
 
         this.state = {
-            trainingRow: "row training-row justify-content-md-center",
-            mainRow: "row main-row justify-content-md-center",
-            sideRow: "row side-row justify-content-md-center",
+            trainingRow: "row training-row justify-content-center",
+            mainRow: "row main-row justify-content-center",
+            sideRow: "row side-row justify-content-center",
         };
 
         this.toggleQuest = this.toggleQuest.bind(this);

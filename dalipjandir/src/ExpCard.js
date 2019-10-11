@@ -12,6 +12,7 @@ class ExpCard extends React.Component{
         this.state = {
             details: "details",
             height: 'auto',
+            oldHeight: 0,
             animationClass: "rah-animating--down"
         };
 
@@ -29,7 +30,7 @@ class ExpCard extends React.Component{
 
         return (
             <AnimateHeight duration={ 500 } height={ this.state.height } className="animate-height">
-                <div className="exp-card" onMouseEnter={this.show} onMouseLeave={this.hide}>
+                <div className="exp-card" onClick={this.show}>
                     <div className="exp-wrapper">
                         <div className={this.props.cardClass}>
                             <div className="container-fluid">
@@ -71,10 +72,16 @@ class ExpCard extends React.Component{
         console.log(currentHeight);
 
         this.setState({
-            height: "currentHeight"
+            height: currentHeight,
+            oldHeight: currentHeight
         });
 
-        setTimeout(this.expand.bind(this), 50)
+        if (this.state.details === "details"){
+            setTimeout(this.expand.bind(this), 50)
+        }
+        else {
+            this.hide();
+        }
     }
 
     expand(){
@@ -85,8 +92,19 @@ class ExpCard extends React.Component{
     }
 
     hide () {
+        let oldHeight = this.state.oldHeight;
+
+        this.setState({
+            height: oldHeight
+        });
+
+        setTimeout(this.collapse.bind(this), 500)
+    }
+
+    collapse () {
         this.setState({
             details: "details",
+            height: "auto"
         });
     }
 }
