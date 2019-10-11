@@ -151,7 +151,6 @@ class QuestJournal extends React.Component{
                                         <img src={github} alt="github" className="git-img quest-img-white"/>
                                         <figcaption> Git Repo </figcaption>
                                     </a> }
-
                         />
                     </div>
                 </div>
@@ -216,6 +215,14 @@ class QuestJournal extends React.Component{
                             imgClass="exp-img"
                             skills = {pongInfSkills}
                             skillClass = "card-skill-img card-skill-white"
+                            detailsList = {<ul>
+                                                <li>A game that takes a twist on original Pong. In this game you play against a wall instead of against a player and go for a high-score</li>
+                                                <li>Developed with Java for Android</li>
+                                           </ul>}
+                            git = { <a href="https://github.com/jandird/PongInfinity" target="_blank" rel="noopener noreferrer">
+                                <img src={github} alt="github" className="git-img quest-img-white"/>
+                                <figcaption> Git Repo </figcaption>
+                            </a> }
                         />
                     </div>
                     <div className="exp-row row">
@@ -226,6 +233,14 @@ class QuestJournal extends React.Component{
                             imgClass="exp-img"
                             skills = {djSkills}
                             skillClass = "card-skill-img card-skill-black"
+                            detailsList = {<ul>
+                                                <li>I like to think that the website speaks for itself</li>
+                                                <li>Built using ReactJS</li>
+                                           </ul>}
+                            git = { <a href="https://github.com/jandird/Website2019" target="_blank" rel="noopener noreferrer">
+                                        <img src={github} alt="github" className="git-img quest-img-black"/>
+                                        <figcaption> Git Repo </figcaption>
+                                    </a> }
                         />
                     </div>
                 </div>
