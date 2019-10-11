@@ -31,6 +31,8 @@ import react from "./resources/images/skills/react.png";
 import bootstrap from "./resources/images/skills/bootstrap.png";
 import sql from "./resources/images/skills/sql.png";
 
+import github from "./resources/images/github.png"
+
 class QuestJournal extends React.Component{
 
     constructor (props){
@@ -145,6 +147,11 @@ class QuestJournal extends React.Component{
                                                 <li>Project was completed through the use of Java and OpenCV for image recognition</li>
                                                 <li>An overall grade of 100% was achieved</li>
                                            </ul>}
+                            git = { <a href="https://github.com/jandird/FIA" target="_blank" rel="noopener noreferrer">
+                                        <img src={github} alt="github" className="git-img quest-img-white"/>
+                                        <figcaption> Git Repo </figcaption>
+                                    </a> }
+
                         />
                     </div>
                 </div>

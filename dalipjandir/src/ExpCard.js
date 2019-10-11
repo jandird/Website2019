@@ -53,6 +53,11 @@ class ExpCard extends React.Component{
                                         </ul>
                                     </div>
                                 </div>
+                                <div className="row justify-content-center">
+                                    <div className={this.state.details}>
+                                        {this.props.git}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
