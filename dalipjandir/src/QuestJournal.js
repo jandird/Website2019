@@ -74,7 +74,7 @@ class QuestJournal extends React.Component{
                     <div id="smallUnderline"/>
                 </div>
                 <div className="row">
-                    <button className={this.state.backClass} onClick={() => this.toggleQuest(this.state.type)}>
+                    <button className={this.state.backClass} onClick={() => this.antiToggleProjectRow(this.state.type)}>
                         <img src={back} alt="back" id="back-img"/>
                     </button>
                 </div>
@@ -284,6 +284,42 @@ class QuestJournal extends React.Component{
         }
 
         document.querySelector("." + type + "-row").classList.toggle("show")
+    }
+
+    antiToggleProjectRow (type) {
+        let stateType = this.state.type;
+        if (stateType === null){
+            this.setState({type: type, backClass: "back-button show"})
+        }
+        else {
+            this.setState({type: null, backClass: "back-button"})
+        }
+
+        let cards = document.querySelectorAll("." + type + "-card");
+        for (let i = 0; i < cards.length; ++i) {
+            cards[i].classList.toggle("show")
+        }
+
+        let wrapper = document.querySelectorAll("." + type + "-wrapper");
+        for (let i = 0; i < wrapper.length; ++i) {
+            wrapper[i].classList.toggle("show")
+        }
+
+        document.querySelector("." + type + "-row").classList.toggle("show");
+
+        setTimeout(this.antiToggleQuest.bind(null), 50);
+    }
+
+    antiToggleQuest() {
+        let questCards = document.querySelectorAll(".quest-card");
+        for (let i = 0; i < questCards.length; ++i) {
+            questCards[i].classList.toggle("hide")
+        }
+
+        let questWrapper = document.querySelectorAll(".quest-wrapper");
+        for (let i = 0; i < questWrapper.length; ++i) {
+            questWrapper[i].classList.toggle("hide")
+        }
     }
 
     static toggleWrapper(wrapper){

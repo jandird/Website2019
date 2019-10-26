@@ -50,6 +50,7 @@ figcaption {
 }
 .back-button.show {
     z-index: 1;
+    animation: fade-in 1s ease-in-out;
 }
 
 #back-img {
@@ -117,6 +118,7 @@ h2 {
 .training-row.show {
     display: flex;
     z-index: 2;
+    animation:  left-slide 0.5s;
 }
 
 .main-row {
@@ -130,6 +132,7 @@ h2 {
 .main-row.show {
     display: flex;
     z-index: 2;
+    animation:  left-slide 0.5s;
 }
 
 .side-row {
@@ -143,6 +146,7 @@ h2 {
 .side-row.show {
     display: flex;
     z-index: 2;
+    animation:  left-slide 0.5s;
 }
 
 .wrapper {
@@ -165,7 +169,8 @@ h2 {
     min-height: 650px;
     height: 100%;
     transition: .5s all ease;
-    box-shadow: 0 20px 50px BLACK;}
+    box-shadow: 0 20px 50px BLACK;
+}
 
 .quest-wrapper {
     z-index: 1;
@@ -311,7 +316,7 @@ h2 {
 .details.show {
     display: block;
     opacity: 1;
-    animation: fadeIn 1s;
+    animation: fade-in 1s;
     transition: all 0s ease-in .1s;
 }
 
@@ -331,4 +336,31 @@ h2 {
 .git-img {
     height: 100px;
     width: 100px;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes left-slide {
+    0% {
+        margin-left: -100%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -100%;
+    }
 }
