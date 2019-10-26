@@ -40,16 +40,16 @@ figcaption {
     100% {background-position: 0 50%;}
 }
 
-#back-button {
+.back-button {
     width: 75px;
     height: 75px;
     z-index: -1;
     background: transparent;
     border: none;
-    margin: 10px auto;
+    margin: 20px auto;
 }
-#back-button:hover {
-    z-index: 400;
+.back-button.show {
+    z-index: 1;
 }
 
 #back-img {

@@ -39,6 +39,8 @@ class QuestJournal extends React.Component{
         super(props);
 
         this.state = {
+            type: null,
+            backClass: "back-button",
             trainingRow: "row training-row justify-content-center",
             mainRow: "row main-row justify-content-center",
             sideRow: "row side-row justify-content-center",
@@ -72,7 +74,7 @@ class QuestJournal extends React.Component{
                     <div id="smallUnderline"/>
                 </div>
                 <div className="row">
-                    <button id="back-button" onClick={() => this.toggleQuest(this.state.type)}>
+                    <button className={this.state.backClass} onClick={() => this.toggleQuest(this.state.type)}>
                         <img src={back} alt="back" id="back-img"/>
                     </button>
                 </div>
@@ -265,10 +267,10 @@ class QuestJournal extends React.Component{
     toggleProjectRow (type) {
         let stateType = this.state.type;
         if (stateType === null){
-            this.setState({type: type})
+            this.setState({type: type, backClass: "back-button show"})
         }
         else {
-            this.setState({type: null})
+            this.setState({type: null, backClass: "back-button"})
         }
 
         let cards = document.querySelectorAll("." + type + "-card");
