@@ -5,9 +5,6 @@ import QuestJournal from './QuestJournal.js'
 
 import './resources/css/App.css';
 
-import sword from './resources/images/Sword.png'
-import wand from './resources/images/Wand.png'
-
 class App extends React.Component {
     constructor (props){
         super(props);
