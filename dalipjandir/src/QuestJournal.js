@@ -307,10 +307,10 @@ class QuestJournal extends React.Component{
 
         document.querySelector("." + type + "-row").classList.toggle("show");
 
-        setTimeout(this.antiToggleQuest.bind(null), 50);
+        setTimeout(QuestJournal.antiToggleQuest.bind(null), 50);
     }
 
-    antiToggleQuest() {
+    static antiToggleQuest() {
         let questCards = document.querySelectorAll(".quest-card");
         for (let i = 0; i < questCards.length; ++i) {
             questCards[i].classList.toggle("hide")

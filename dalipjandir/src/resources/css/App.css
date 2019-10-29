@@ -1,16 +1,23 @@
-#Birds {
+#intro {
     top: 0;
-    position: absolute;
+    min-height: 100%;
+    height: auto;
+    position: relative;
 }
 
-#Name {
+#birds {
+    top: 0;
+    position: fixed;
+}
+
+#name {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 35pt;
     line-height: 35pt;
     color: white;
     top: 25%;
-    position: absolute;
+    position: fixed;
 }
 
 .text-center {
@@ -41,7 +48,7 @@
 
 #startButton {
     margin: 0;
-    position: absolute;
+    position: fixed;
     top: 60%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
@@ -124,8 +131,4 @@
     margin-top: 10px;
     font-size: 30pt;
     color: WHITE;
-}
-
-#aboutComp{
-    margin-top: 100%;
 }

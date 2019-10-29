@@ -1,5 +1,6 @@
 #about{
-    position: absolute;
+    position: relative;
+    top: 100%;
     width: 100%;
     height: auto;
     min-height: 100%;
