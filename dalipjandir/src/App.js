@@ -8,30 +8,62 @@ import './resources/css/App.css';
 import sword from './resources/images/Sword.png'
 import wand from './resources/images/Wand.png'
 
-function Main() {
-    return (
-        <div id="main">
-            <div id="intro">
-                <div id="birds">
-                    <Birds/>
-                </div>
-                <div id="name" className="text-center">
-                    <p>Welcome to the Legend of <span className="bold-name">Dalip Jandir</span></p>
-                    <p>This is his Story</p>
-                </div>
-                <button id="startButton" onClick={topTransition}>Start</button>
-            </div>
-            <div id="aboutComp">
-                <About id="about"/>
-            </div>
-            <div>
-                <QuestJournal/>
-            </div>
-        </div>
-    );
+class App extends React.Component {
+    constructor (props){
+        super(props);
 
-    function topTransition(){
-        document.getElementById('about').scrollIntoView();
+        this.state = {
+            aboutStyle: {
+                position: "absolute",
+                top: '100%'
+            }
+        };
+
+        this.start = this.start.bind(this);
+    }
+    render () {
+        return (
+            <div id="main">
+                <div id="intro">
+                    <div id="birds">
+                        <Birds/>
+                    </div>
+                    <div id="name" className="text-center">
+                        <p>Welcome to the Legend of <span className="bold-name">Dalip Jandir</span></p>
+                        <p>This is his Story</p>
+                    </div>
+                    <button id="startButton" onClick={this.start}>Start</button>
+                </div>
+                <div style={this.state.aboutStyle}>
+                    <About id="about"/>
+                    <QuestJournal/>
+                </div>
+            </div>
+        );
+    }
+
+    start(){
+        // this.setState({
+        //     aboutStyle: {
+        //         display: "block",
+        //         position: "absolute",
+        //         transition: "0.5s ease-in",
+        //         top: '100%'
+        //     }
+        // });
+
+        // setTimeout(this.transition.bind(this), 50)
+    }
+
+    transition() {
+        // this.setState({
+        //     aboutStyle: {
+        //         display: "block",
+        //         position: "absolute",
+        //         transition: "0.75s ease-in",
+        //         top: '50%'
+        //     }
+        // });
     }
 }
 
@@ -56,4 +88,4 @@ class Birds extends React.Component {
     }
 }
 
-export default Main;
+export default App;

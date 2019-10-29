@@ -29,6 +29,7 @@ function About(){
 
     return(
         <div id="about" className="container-fluid">
+            <div id="page-top"/>
 
             <div className="row">
                 <h1 className="text-center">Character Info</h1>
