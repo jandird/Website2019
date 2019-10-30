@@ -29,7 +29,19 @@ class App extends React.Component {
                         <p>Welcome to the Legend of <span className="bold-name">Dalip Jandir</span></p>
                         <p>This is his Story</p>
                     </div>
-                    <button id="startButton" onClick={this.start}>Start</button>
+                    <div id="btn-container" className="container">
+                        <div className="row">
+                            <div className="col-lg-4 text-center">
+                                <button id="startButton" onClick={this.start}>Resume</button>
+                            </div>
+                            <div className="col-lg-4 text-center">
+                                <button id="startButton" onClick={this.start}>Start</button>
+                            </div>
+                            <div className="col-lg-4 text-center">
+                                <button id="startButton" onClick={this.start}>Transcript</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div style={this.state.aboutStyle}>
                     <About id="about"/>

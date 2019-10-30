@@ -46,13 +46,17 @@
 
 /*}*/
 
-#startButton {
-    margin: 0;
+#btn-container {
     position: fixed;
     top: 60%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+#startButton {
+    margin: 10px auto;
 
     border:0;
     border-radius: 10px;
