@@ -1,9 +1,14 @@
 import React from 'react';
+import {$} from 'jquery'
 
 import About from './About.js'
 import QuestJournal from './QuestJournal.js'
 
 import './resources/css/App.css';
+
+import github from './resources/images/github.png'
+import linkedIn from './resources/images/linkedIn.png'
+
 
 class App extends React.Component {
     constructor (props){
@@ -31,6 +36,18 @@ class App extends React.Component {
                     </div>
                     <div id="btn-container" className="container">
                         <div className="row">
+                            <div className="col-6">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dalip-jandir/">
+                                        <img src={linkedIn} alt="linkedIn"/>
+                                </a>
+                            </div>
+                            <div className="col-6">
+                                <a target="_blank" rel="noopener noreferrer" href="https://github.com/jandird">
+                                    <img src={github} alt="github"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="row">
                             <div className="col-lg-4 text-center">
                                 <button id="startButton" onClick={this.start}>Resume</button>
                             </div>
@@ -51,7 +68,7 @@ class App extends React.Component {
         );
     }
 
-    start(){
+    start = function(){
         // this.setState({
         //     aboutStyle: {
         //         display: "block",
@@ -62,7 +79,8 @@ class App extends React.Component {
         // });
 
         // setTimeout(this.transition.bind(this), 50)
-    }
+        $("html, body").animate({ scrollTop: window.innerHeight }, 1000);
+    };
 
     transition() {
         // this.setState({
