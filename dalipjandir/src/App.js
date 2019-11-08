@@ -33,20 +33,19 @@ class App extends React.Component {
                     <div id="name" className="text-center">
                         <p>Welcome to the Legend of <span className="bold-name">Dalip Jandir</span></p>
                         <p>This is his Story</p>
-                    </div>
-                    <div id="btn-container" className="container">
+
                         <div className="row">
-                            <div className="col-6">
+                            <div className="center-div">
                                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dalip-jandir/">
-                                        <img src={linkedIn} alt="linkedIn"/>
+                                    <img src={linkedIn} alt="linkedIn" className="portfolio-img"/>
                                 </a>
-                            </div>
-                            <div className="col-6">
                                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/jandird">
-                                    <img src={github} alt="github"/>
+                                    <img src={github} alt="github" className="portfolio-img"/>
                                 </a>
                             </div>
                         </div>
+                    </div>
+                    <div id="btn-container" className="container">
                         <div className="row">
                             <div className="col-lg-4 text-center">
                                 <button id="startButton" onClick={this.start}>Resume</button>
