@@ -68,8 +68,14 @@ class ExpCard extends React.Component{
     }
 
     show () {
-        let currentHeight = document.querySelector(".exp-wrapper").clientHeight;
-        console.log(currentHeight);
+        let currentHeights = document.querySelectorAll(".exp-wrapper");
+        let currentHeight = 0;
+
+        currentHeights.forEach((c) => {
+            if (c.clientHeight !== 0){
+                currentHeight = c.clientHeight;
+            }
+        });
 
         this.setState({
             height: currentHeight,

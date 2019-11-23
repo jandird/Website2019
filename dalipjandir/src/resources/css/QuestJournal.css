@@ -118,7 +118,7 @@ h2 {
 .training-row.show {
     display: flex;
     z-index: 2;
-    animation:  left-slide 0.5s;
+    animation:  left-slide 1s;
 }
 
 .main-row {
@@ -349,10 +349,10 @@ h2 {
 
 @keyframes left-slide {
     0% {
-        margin-left: -100%;
+        transform: translateX(-100%);
     }
     100% {
-        margin-left: 0;
+        transform: translateX(0%);
     }
 }
 

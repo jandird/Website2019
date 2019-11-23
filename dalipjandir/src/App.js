@@ -1,5 +1,4 @@
 import React from 'react';
-import {$} from 'jquery'
 
 import About from './About.js'
 import QuestJournal from './QuestJournal.js'
@@ -20,8 +19,6 @@ class App extends React.Component {
                 top: '100%'
             }
         };
-
-        this.start = this.start.bind(this);
     }
     render () {
         return (
@@ -47,14 +44,9 @@ class App extends React.Component {
                     </div>
                     <div id="btn-container" className="container">
                         <div className="row">
-                            <div className="col-lg-4 text-center">
-                                <button id="startButton" onClick={this.start}>Resume</button>
-                            </div>
-                            <div className="col-lg-4 text-center">
-                                <button id="startButton" onClick={this.start}>Start</button>
-                            </div>
-                            <div className="col-lg-4 text-center">
-                                <button id="startButton" onClick={this.start}>Transcript</button>
+                            <div className="center-div">
+                                <button className="homeButton" onClick={this.start}>Resume</button>
+                                <button className="homeButton" onClick={this.start}>Start</button>
                             </div>
                         </div>
                     </div>
@@ -67,30 +59,6 @@ class App extends React.Component {
         );
     }
 
-    start = function(){
-        // this.setState({
-        //     aboutStyle: {
-        //         display: "block",
-        //         position: "absolute",
-        //         transition: "0.5s ease-in",
-        //         top: '100%'
-        //     }
-        // });
-
-        // setTimeout(this.transition.bind(this), 50)
-        $("html, body").animate({ scrollTop: window.innerHeight }, 1000);
-    };
-
-    transition() {
-        // this.setState({
-        //     aboutStyle: {
-        //         display: "block",
-        //         position: "absolute",
-        //         transition: "0.75s ease-in",
-        //         top: '50%'
-        //     }
-        // });
-    }
 }
 
 class Birds extends React.Component {
