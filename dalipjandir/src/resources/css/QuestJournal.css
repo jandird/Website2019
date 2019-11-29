@@ -99,17 +99,21 @@ h2 {
 
 .quest-row {
     display: flex;
-    position: absolute;
-    top: 200px;
+    position: relative;
+    top: -100px;
     width: 100%;
     height: auto;
 
     background: #171f29;
 }
+.quest-row.hide {
+    display: none;
+}
 
 .training-row {
     display: none;
-    top: 200px;
+    position: relative;
+    /*top: -660px;*/
     width: 100%;
     height: auto;
     margin: 0;
@@ -123,7 +127,8 @@ h2 {
 
 .main-row {
     display: none;
-    top: 200px;
+    position: relative;
+    top: -660px;
     width: 100%;
     height: auto;
     margin: 0;
@@ -137,7 +142,8 @@ h2 {
 
 .side-row {
     display: none;
-    top: 200px;
+    position: relative;
+    top: -660px;
     width: 100%;
     height: auto;
     margin: 0;

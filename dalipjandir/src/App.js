@@ -7,6 +7,7 @@ import './resources/css/App.css';
 
 import github from './resources/images/github.png'
 import linkedIn from './resources/images/linkedIn.png'
+import ContactMe from "./ContactMe";
 
 
 class App extends React.Component {
@@ -53,6 +54,7 @@ class App extends React.Component {
                 <div style={this.state.aboutStyle}>
                     <About id="about"/>
                     <QuestJournal/>
+                    <ContactMe/>
                 </div>
             </div>
         );

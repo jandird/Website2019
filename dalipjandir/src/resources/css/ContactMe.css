@@ -1,0 +1,47 @@
+#contact-me{
+    position: relative;
+    top: 400%;
+    width: 100%;
+    height: auto;
+    color: #6cf0e5;
+    font-family: 'Raleway', sans-serif;
+    animation: flow 4s ease-in-out infinite;
+    background: linear-gradient(-60deg, #03a9f4, #00bcd4, #e73c7e, #ee7752);
+    background-size: 130%;
+}
+
+#ci {
+    margin-top: 100px;
+    font-weight: 600;
+    font-size: 55pt;
+
+    color: #171f29;
+}
+
+#ci-underline {
+    background: white;
+    margin: 0 auto 15px;
+    width: 300px;
+    height: 10px;
+}
+
+#ci-smallUnderline {
+    background: white;
+    margin: 0 auto;
+    width: 200px;
+    height: 10px;
+}
+
+#hire-me {
+    margin-top: 25px;
+    font-weight: 600;
+    font-size: 14pt;
+
+    color: #171f29;
+}
+
+.polygon {
+    z-index: 0;
+    position: absolute;
+    right: 0;
+}

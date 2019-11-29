@@ -268,23 +268,24 @@ class QuestJournal extends React.Component{
     toggleProjectRow (type) {
         let stateType = this.state.type;
         if (stateType === null){
-            this.setState({type: type, backClass: "back-button show"})
+            this.setState({type: type, backClass: "back-button show"});
         }
         else {
-            this.setState({type: null, backClass: "back-button"})
+            this.setState({type: null, backClass: "back-button"});
         }
 
         let cards = document.querySelectorAll("." + type + "-card");
         for (let i = 0; i < cards.length; ++i) {
-            cards[i].classList.toggle("show")
+            cards[i].classList.toggle("show");
         }
 
         let wrapper = document.querySelectorAll("." + type + "-wrapper");
         for (let i = 0; i < wrapper.length; ++i) {
-            wrapper[i].classList.toggle("show")
+            wrapper[i].classList.toggle("show");
         }
 
-        document.querySelector("." + type + "-row").classList.toggle("show")
+        document.querySelector("." + type + "-row").classList.toggle("show");
+        document.querySelector(".quest-row").classList.toggle("hide");
     }
 
     antiToggleProjectRow (type) {
@@ -307,6 +308,7 @@ class QuestJournal extends React.Component{
         }
 
         document.querySelector("." + type + "-row").classList.toggle("show");
+        document.querySelector(".quest-row").classList.toggle("hide");
 
         setTimeout(QuestJournal.antiToggleQuest.bind(null), 50);
     }
