@@ -63,7 +63,8 @@ class QuestJournal extends React.Component{
 
         return (
             <div id="quest-journal" className="container-fluid">
-
+                <div id="page-top"/>
+                
                 <div className="row">
                     <h1 className="text-center">Quest Journal</h1>
                 </div>

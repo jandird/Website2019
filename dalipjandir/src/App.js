@@ -30,22 +30,21 @@ class App extends React.Component {
                     <div id="name" className="text-center">
                         <p>Welcome to the Legend of <span className="bold-name">Dalip Jandir</span></p>
                         <p>This is his Story</p>
-
-                        <div className="row">
-                            <div className="center-div">
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dalip-jandir/">
-                                    <img src={linkedIn} alt="linkedIn" className="portfolio-img"/>
-                                </a>
-                                <a target="_blank" rel="noopener noreferrer" href="https://github.com/jandird">
-                                    <img src={github} alt="github" className="portfolio-img"/>
-                                </a>
+                        <div className="container">
+                            <div className="row">
+                                <div className="center-div">
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dalip-jandir/">
+                                        <img src={linkedIn} alt="linkedIn" className="portfolio-img"/>
+                                    </a>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/jandird">
+                                        <img src={github} alt="github" className="portfolio-img"/>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div id="btn-container" className="container">
-                        <div className="row">
-                            <div className="center-div">
+                            <div className="row">
                                 <button className="homeButton" onClick={this.start}>Resume</button>
+                            </div>
+                            <div className="row">
                                 <button className="homeButton" onClick={this.start}>Start</button>
                             </div>
                         </div>
