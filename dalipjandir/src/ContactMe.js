@@ -1,6 +1,8 @@
 import React from 'react'
 
 import "./resources/css/ContactMe.css"
+import linkedIn from "./resources/images/linkedIn.png";
+import github from "./resources/images/github.png";
 
 function ContactMe() {
     return (
@@ -25,12 +27,22 @@ function ContactMe() {
                     If not that's cool too. I'm into tech, basketball, video games, and anime.
                 </p>
             </div>
-            <form>
-                <input type="name" className="form-control" id="name-input" placeholder="Name"/>
-                <input type="email" className="form-control" id="email-input" placeholder="E-mail"/>
-                <textarea className="form-control" id="message-input" rows="3" placeholder="Message"/>
-                <button type="submit" className="btn">Submit</button>
+            <form target="_blank" action="https://formspree.io/meqogyye" method="POST">
+                <input type="name" name="name" className="form-control contact-box" id="name-input" placeholder="Name"/>
+                <input type="email" name="_replyto" className="form-control contact-box" id="email-input" placeholder="E-mail"/>
+                <textarea name="message" className="form-control contact-box" id="message-input" rows="3" placeholder="Message"/>
+                <button id="submit" type="submit" className="btn">Submit</button>
             </form>
+            <div className="row">
+                <div className="center-div">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dalip-jandir/">
+                        <img src={linkedIn} alt="linkedIn" className="portfolio-btn"/>
+                    </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/jandird">
+                        <img src={github} alt="github" className="portfolio-btn"/>
+                    </a>
+                </div>
+            </div>
         </div>
     );
 }

@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 import About from './About.js'
 import QuestJournal from './QuestJournal.js'
+import ContactMe from "./ContactMe";
 
 import './resources/css/App.css';
 
 import github from './resources/images/github.png'
 import linkedIn from './resources/images/linkedIn.png'
-import ContactMe from "./ContactMe";
 
+import resume from './resources/doc/Resume_Dalip_Jandir.pdf'
 
 class App extends React.Component {
     constructor (props){
@@ -43,10 +45,14 @@ class App extends React.Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <button className="homeButton" onClick={this.start}>Resume</button>
+                                <form method="GET" target="_blank" className="start-link" action={resume}>
+                                    <button type="submit" className="homeButton">Resume</button>
+                                </form>
                             </div>
                             <div className="row">
-                                <button className="homeButton" onClick={this.start}>Start</button>
+                                <Link activeClass="active" className="start-link" to="about" spy={true} smooth={true} duration={500}>
+                                    <button className="homeButton">Start</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

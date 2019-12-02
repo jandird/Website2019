@@ -32,6 +32,10 @@
     -webkit-text-fill-color: transparent;
 }
 
+.start-link {
+    margin: 0 auto;
+}
+
 .homeButton {
     margin: 20px auto;
 
