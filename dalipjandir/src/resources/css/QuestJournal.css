@@ -113,7 +113,6 @@ h2 {
 .training-row {
     display: none;
     position: relative;
-    /*top: -660px;*/
     width: 100%;
     height: auto;
     margin: 0;
@@ -128,7 +127,6 @@ h2 {
 .main-row {
     display: none;
     position: relative;
-    top: -660px;
     width: 100%;
     height: auto;
     margin: 0;
@@ -143,7 +141,6 @@ h2 {
 .side-row {
     display: none;
     position: relative;
-    top: -660px;
     width: 100%;
     height: auto;
     margin: 0;

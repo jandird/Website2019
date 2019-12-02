@@ -45,3 +45,18 @@
     position: absolute;
     right: 0;
 }
+
+#name-input {
+    margin: 10px auto;
+    width: 38%;
+}
+
+#email-input {
+    margin: 10px auto;
+    width: 38%;
+}
+
+#message-input {
+    margin: 10px auto;
+    width: 38%;
+}
