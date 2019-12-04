@@ -45,7 +45,7 @@ function About(){
                 <div className="col-md-7">
                     <div className="row">
                         <img src={me} alt="me" id="meImg"/>
-                        <h2 id="race" className="text-center">Dalip Jandir - Class: Human</h2>
+                        <h2 id="race" className="text-center">Dalip Jandir</h2>
                     </div>
                     <div id="dalip-info" className="row">
                         <p>
@@ -59,7 +59,7 @@ function About(){
                         </p>
                         <p>
                             <img src={quest} alt="quest" className="bio-icons"/>
-                            QUEST: Receive a New Grad Software Engineer Offer
+                            QUEST: Receive a Software Engineer (New Grad) Offer
                         </p>
                     </div>
                     <div className="row">
